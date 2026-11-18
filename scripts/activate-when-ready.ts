@@ -31,10 +31,8 @@ for (let attempt = 1; attempt <= attempts; attempt += 1) {
   const builder = buildActivate(contract, state, operator, deployment.auditDelay, funding.slice(0, 1), providerInstance);
   const height = await providerInstance.getBlockHeight();
   try {
-    const txid = await builder.send();
     console.log(`\nattempt ${attempt}: accepted (reported tip ${height})`);
-    console.log(`  txid     : ${txid.txid}`);
-    console.log(`  explorer : https://chipnet.imaginary.cash/tx/${txid.txid}`);
+    await sendTx(builder, `activate epoch ${treeFile.epoch} root`);
     process.exit(0);
   } catch (error) {
     const message = (error as Error).message.split('\n')[0];

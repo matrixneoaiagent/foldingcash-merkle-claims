@@ -187,8 +187,16 @@ committed, and `claimable` reflects what the user has already withdrawn.
 | user 2 claims (epoch 2) | `69650499b8c89b9814989b43e0561dd24cd11b9c90dd58f457f1369f94178f78` | 158,696 units + receipt `36b3fc17…c9e86b02` |
 | user 2 delegates the receipt | `11104ccfdc24cf0e8750ba2567afec23f956ffb26228b70f21dea22ca041f589` | receipt moved to the `ReceiptHold` covenant (`minPush = 100`) |
 | epoch 3 proposed | `4338366ec224fe565f0801064c966de537d6051646300a3d54bc58e437550bff` | root `776b6e07a872fe8ffbc314e789ab37bf8e059f8c`, user 2 outstanding = 11,050 |
-| epoch 3 activated | *(see transactions.jsonl)* | |
-| **operator push** | *(see transactions.jsonl)* | the operator pays the fee and dust, the user receives 11,050 units, the receipt stays delegated |
+| epoch 3 activated | `npm run activate:when-ready` | retries until the accepting node's tip catches up (see FINDINGS §6) |
+| **operator push** | `npm run push -- 2 100` | the operator pays the fee and dust, the user receives 11,050 units, the receipt stays delegated |
+
+At handoff the epoch-3 activation was still retrying: the Chipnet node that
+accepts broadcasts was ~20 blocks behind the Electrum-reported tip, so the
+2-block relative locktime was not yet satisfied *from its point of view* even
+though the pending UTXO had many confirmations by the index. `activate-when-ready`
+retries with the same sequence until it lands; nothing about the contract or the
+timelock changes. `demo/transactions.jsonl` records every broadcast, including
+this one as soon as it is accepted.
 
 The push is a normal claim whose receipt input is unlocked by
 `ReceiptHold.delegated(operatorSig)` instead of the user's key. Three things keep
