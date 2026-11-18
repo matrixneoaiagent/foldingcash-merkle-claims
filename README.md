@@ -111,6 +111,8 @@ npm run sync -- 2               # watcher: rebuild the root from chain history
 npm run serve -- 8710           # proof server + /watch endpoint
 npm run delegate -- 2 100       # user 2 opts in to operator push
 npm run push -- 2 100           # operator submits user 2's claim, paying the fee
+npm run reject:wrong-receipt -- 3 1   # a receipt cannot be used for another leaf
+npm run verify -- 3             # chain-only re-check of every claim and the root
 npm run status                  # pool state, balances, root check
 npm run cost                    # push vs pull cost table from measured sizes
 npm run depth                   # Merkle depth / VM limit table
