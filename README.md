@@ -86,7 +86,8 @@ The tests run the compiled contracts through libauth's BCH VM with CashScript's
 `MockNetworkProvider`, including: a successful claim, a receipt claim, a replayed
 proof, an inflated `earned`, a redirect of the payout, a drain attempt, the
 rotation/timelock flow, `cancelRoot`, `deposit`, and the delegated push path with
-its threshold.
+its threshold. **18/18 pass** (about 7 minutes: every assertion evaluates a real
+transaction), `tsc --noEmit` is clean, and `.github/workflows/ci.yml` runs both.
 
 ## Chipnet demo (already executed — reproduce from scratch)
 
