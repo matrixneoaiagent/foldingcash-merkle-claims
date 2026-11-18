@@ -100,5 +100,8 @@ keys, and an external audit. See FINDINGS.md.
 | user 2 claim | `69650499b8c89b9814989b43e0561dd24cd11b9c90dd58f457f1369f94178f78` |
 | user 2 delegates receipt to ReceiptHold | `11104ccfdc24cf0e8750ba2567afec23f956ffb26228b70f21dea22ca041f589` |
 | propose epoch-3 root | `4338366ec224fe565f0801064c966de537d6051646300a3d54bc58e437550bff` |
+| activate epoch-3 root | `fb5afb88a7851fe62cc88c27c859f8a74f08afecc92ebfa1ebf0afbc4cae054d` |
+| operator push (delegated receipt) | `54e295b52a4e78cfb03277eb22641a3ef7c7e9c342612a1c1c7828b2b5cc9b82` |
+| user 3 claim | `cc1fbadd2630c90f4c1606f409634ddf0461e74f3012e06afd0cf6aba444564c` |
 
 All on Chipnet, viewable at `https://chipnet.imaginary.cash/tx/<txid>`.

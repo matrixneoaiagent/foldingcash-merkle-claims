@@ -1,7 +1,7 @@
 {
   "depth": 9,
   "epoch": 3,
-  "root": "776b6e07a872fe8ffbc314e789ab37bf8e059f8c",
+  "root": "3e06dcf71fc43b42969039d49f6e7448b699d674",
   "leaves": [
     {
       "addrHash": "006009e0ea829f97d14f3d43f3443c92b750c2f9",
@@ -391,7 +391,7 @@
       "addrHash": "36b3fc178c6c77d4781d2d14ad41c65bbc5220c9",
       "address": "bchtest:zpeahut87d7060wjaej7nxx9nr8dhh8tdsh9drjq7g",
       "earned": "169746",
-      "claimed": "158696"
+      "claimed": "169746"
     },
     {
       "addrHash": "36d26d72ca5a3767295cbe4c714cd8fa0efb4330",
@@ -817,7 +817,7 @@
       "addrHash": "777e5200b0a08641a8e95e4cb692d6560c3d6757",
       "address": "bchtest:zqz4ekhjkjexkylv0yll0r0dj345zk6mac8ffgnaek",
       "earned": "1595",
-      "claimed": "0"
+      "claimed": "1595"
     },
     {
       "addrHash": "77d5c3566ae5b046caab52bc0d106ec1540a6061",

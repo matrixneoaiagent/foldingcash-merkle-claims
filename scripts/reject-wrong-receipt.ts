@@ -1,12 +1,13 @@
 /**
  * Negative test 3: a receipt NFT is bound to its own leaf.
  *
- * User A's receipt records `hash160(A) || cumulativeEarned(A)`. Handing that
- * receipt to a claim for user B is rejected by the covenant, because the receipt
- * commitment must equal `addrHash(B) || claimed(B)` from the Merkle leaf. This is
- * what stops a receipt being re-used across leaves (or sold as a claim ticket).
+ * User A's receipt records `hash160(A) || cumulativeEarned(A)`. User A (the only
+ * key that can spend that receipt) tries to use it to claim user B's leaf. The
+ * covenant rejects it, because the receipt commitment must equal
+ * `addrHash(B) || claimed(B)` from the Merkle leaf. This is what stops a receipt
+ * being re-used across leaves, or sold/promised as a claim ticket.
  *
- * Usage: tsx scripts/reject-wrong-receipt.ts <userA> <userB>
+ * Usage: tsx scripts/reject-wrong-receipt.ts <userA: receipt owner> <userB: target leaf>
  */
 import { loadDeployment, loadTree, poolContract, provider, readPool, treeFromFile, walletAt, ZERO20, buildClaim } from '../src/pool';
 import { addrHashOfAddress } from '../src/cash';
@@ -33,8 +34,9 @@ const receiptA = (await providerInstance.getUtxos(walletA.address)).find(
 );
 if (!receiptA) throw new Error(`user ${userA} has no receipt NFT`);
 const proofB = tree.proof(addrB);
-const funding = (await providerInstance.getUtxos(walletB.address)).filter((u) => !u.token);
-if (funding.length === 0) throw new Error(`user ${userB} needs a BCH UTXO`);
+// the receipt owner signs (only they can spend their own receipt and fund the fee)
+const funding = (await providerInstance.getUtxos(walletA.address)).filter((u) => !u.token);
+if (funding.length === 0) throw new Error(`user ${userA} needs a BCH UTXO`);
 
 console.log(`claiming leaf ${addrB} (user ${userB}) with user ${userA}'s receipt ${addrA}`);
 console.log(`  receipt commitment: ${receiptA.token!.nft!.commitment}`);
@@ -47,7 +49,7 @@ const builder = buildClaim(
     recipient: walletB.address,
     receiptUtxo: receiptA,
     funding,
-    claimer: walletB,
+    claimer: walletA,
   },
   providerInstance,
 );

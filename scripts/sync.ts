@@ -49,8 +49,9 @@ saveTree({
   epoch,
   root: tree.root,
   leaves: published.leaves.map((leaf) => {
-    const record = records.find((r) => r.addrHash === leaf.addrHash);
-    return record ? { ...leaf, claimed: record.earned.toString() } : leaf;
+    const mine = records.filter((r) => r.addrHash === leaf.addrHash);
+    const claimed = mine.reduce((max, r) => (r.earned > max ? r.earned : max), BigInt(leaf.claimed));
+    return { ...leaf, claimed: claimed.toString() };
   }),
 });
 writeFileSync(

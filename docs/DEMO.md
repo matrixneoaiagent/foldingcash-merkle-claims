@@ -135,6 +135,11 @@ npm run claim -- 1
 Replaying *this* proof is rejected the same way (run `FC_EPOCH=2 npm run
 reject:double -- 1 27f475d8…`).
 
+A receipt is also bound to the leaf it belongs to: `npm run reject:wrong-receipt --
+3 1` takes user 3's receipt (the only key that can spend it) and tries to claim
+user 1's leaf, and the covenant answers
+`receipt does not match claimed total`.
+
 ## 6. Watcher: the root is fully explained by the chain
 
 ```bash
@@ -187,8 +192,18 @@ committed, and `claimable` reflects what the user has already withdrawn.
 | user 2 claims (epoch 2) | `69650499b8c89b9814989b43e0561dd24cd11b9c90dd58f457f1369f94178f78` | 158,696 units + receipt `36b3fc17…c9e86b02` |
 | user 2 delegates the receipt | `11104ccfdc24cf0e8750ba2567afec23f956ffb26228b70f21dea22ca041f589` | receipt moved to the `ReceiptHold` covenant (`minPush = 100`) |
 | epoch 3 proposed | `4338366ec224fe565f0801064c966de537d6051646300a3d54bc58e437550bff` | root `776b6e07a872fe8ffbc314e789ab37bf8e059f8c`, user 2 outstanding = 11,050 |
-| epoch 3 activated | `npm run activate:when-ready` | retries until the accepting node's tip catches up (see FINDINGS §6) |
-| **operator push** | `npm run push -- 2 100` | the operator pays the fee and dust, the user receives 11,050 units, the receipt stays delegated |
+| epoch 3 activated | `fb5afb88a7851fe62cc88c27c859f8a74f08afecc92ebfa1ebf0afbc4cae054d` | accepted on attempt 16, once the accepting node's tip reached 337204 (see FINDINGS §6) |
+| **operator push** | `54e295b52a4e78cfb03277eb22641a3ef7c7e9c342612a1c1c7828b2b5cc9b82` | 5 inputs / 5 outputs, 2966 bytes, fee 3,263 sats paid by the operator; user 2 receives 11,050 units, the receipt returns to the delegation with commitment `…c9129702` (= 169,746) |
+| user 3 claims (epoch 3) | `cc1fbadd2630c90f4c1606f409634ddf0461e74f3012e06afd0cf6aba444564c` | 1,595 units + receipt `777e5200…3b06` |
+| wrong receipt rejected | *(local VM)* | user 3's receipt against user 1's leaf → `receipt does not match claimed total` |
+
+![operator push](explorer/operator-push.png)
+
+The push transaction is the interesting one: input 2 is the delegated receipt at
+`bchtest:p06ap9mxht2alum3rmm90elkhvrk37wtukamdxvdel6p2atdztxgwc92evehq`, output 3
+sends the re-minted receipt back to the same delegation, output 0 pays the leaf
+address, and output 2 carries the new root `d21223fb…`. The operator paid 3,263
+sats and the dust; the user did nothing and received 11,050 units.
 
 At handoff the epoch-3 activation was still retrying: the Chipnet node that
 accepts broadcasts was ~20 blocks behind the Electrum-reported tip, so the
