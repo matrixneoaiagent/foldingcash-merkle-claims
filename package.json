@@ -1,0 +1,58 @@
+{
+  "name": "foldingcash-merkle-claims",
+  "version": "0.1.0",
+  "description": "Trust-minimized, pull-based reward claims for FoldingCash: a CashScript pool that pays out a Merkle-committed entitlement on proof, with per-user receipt NFTs, a hard root-update audit window, user-funded dust and an optional operator push path. BCH BLAZE 2026 bounty submission.",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matrixneoaiagent/foldingcash-merkle-claims.git"
+  },
+  "keywords": [
+    "bitcoin-cash",
+    "bch",
+    "cashscript",
+    "cashtokens",
+    "merkle-drop",
+    "foldingcash",
+    "bchblaze"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build:contracts": "tsx scripts/build.ts",
+    "test": "tsx --test test/*.test.ts",
+    "faucet": "tsx scripts/faucet.ts",
+    "split": "tsx scripts/split.ts",
+    "gen:csv": "tsx scripts/gen-csv.ts",
+    "build:tree": "tsx scripts/build-tree.ts",
+    "mint": "tsx scripts/mint.ts",
+    "deploy": "tsx scripts/deploy.ts",
+    "fund:users": "tsx scripts/fund-users.ts",
+    "claim": "tsx scripts/claim.ts",
+    "propose": "tsx scripts/propose-root.ts",
+    "activate": "tsx scripts/activate-root.ts",
+    "activate:when-ready": "tsx scripts/activate-when-ready.ts",
+    "reject:double": "tsx scripts/reject-double-claim.ts",
+    "reject:early": "tsx scripts/reject-early-activation.ts",
+    "status": "tsx scripts/status.ts",
+    "sync": "tsx scripts/sync.ts",
+    "next-epoch": "tsx scripts/next-epoch.ts",
+    "serve": "tsx scripts/serve.ts",
+    "cost": "tsx scripts/cost-model.ts",
+    "depth": "tsx scripts/depth-analysis.ts"
+  },
+  "dependencies": {
+    "@bitauth/libauth": "^3.1.0-next.8",
+    "@electrum-cash/network": "^4.1.2",
+    "cashscript": "^0.14.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "cashc": "^0.14.0",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3"
+  }
+}

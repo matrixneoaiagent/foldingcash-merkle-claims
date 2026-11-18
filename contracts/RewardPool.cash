@@ -1,0 +1,218 @@
+pragma cashscript ^0.14.0;
+
+/*
+ * RewardPool — pull-based, Merkle-verified reward claims for FoldingCash.
+ *
+ * The pool lives at this contract address as two UTXOs:
+ *   [0] the reward balance: fungible tokens of `rewardCategory` (FLDCH, or the
+ *       Chipnet stand-in), and
+ *   [1] the pool state: one MINTING NFT of `receiptCategory` whose 40-byte
+ *       commitment is the entire on-chain state, `activeRoot(20) || pendingRoot(20)`.
+ * (A BCH output can only carry one token category, so the reward tokens and the
+ * state NFT necessarily live in separate outputs of the same contract.)
+ *
+ * The operator publishes a Merkle root over fixed-size leaves
+ * `hash160(0x00 || addressHash || cumulativeEarned(8) || cumulativeClaimed(8))`.
+ * A claim proves its leaf against the committed `activeRoot`, pays
+ * `cumulativeEarned - cumulativeClaimed` to the address committed in the leaf,
+ * rewrites that leaf to "fully claimed" and commits the resulting root back into
+ * the state NFT. Because the root is rewritten in place, the same proof can
+ * never be used twice: a replay recomputes the *old* root, which is no longer
+ * the committed one.
+ *
+ * Root rotation is two-phase and gives watchers a hard audit window:
+ *   proposeRoot  activeRoot stays committed, pendingRoot is set -> claims pause
+ *   activateRoot the pending UTXO must be `auditDelay` blocks old (BIP68/CSV),
+ *                then pendingRoot becomes activeRoot           -> claims resume
+ *   cancelRoot   operator aborts a proposal (no delay needed)
+ *
+ * Node hashes are 20-byte hash160() digests (160-bit security, 20 bytes per
+ * proof level instead of 32, which keeps the claim transaction small). DEPTH is
+ * a compile-time constant; the tooling pads the leaf set to 2^DEPTH slots with
+ * EMPTY leaves so every proof is exactly DEPTH * 20 bytes.
+ */
+
+int constant DEPTH = 9;
+bytes20 constant ZERO_HASH = 0x0000000000000000000000000000000000000000;
+
+function nodeHash(bytes20 left, bytes20 right) returns (bytes20) {
+    return hash160(0x01 + left + right);
+}
+
+function leafHash(bytes20 addrHash, int earned, int claimed) returns (bytes20) {
+    return hash160(0x00 + addrHash + toPaddedBytes(earned, 8) + toPaddedBytes(claimed, 8));
+}
+
+// Recomputes the root from a leaf and its DEPTH-long sibling path.
+// Bit i of `path` is set when the current node is the RIGHT child at level i.
+function walk(bytes20 leaf, bytes proof, int path) returns (bytes20) {
+    bytes20 node = leaf;
+    bytes rest = proof;
+    int divisor = 1;
+    for (int i = 0; i < DEPTH; i++) {
+        bytes head, bytes tail = rest.split(20);
+        bytes20 sibling = unsafe_bytes20(head);
+        if ((path / divisor) % 2 == 1) {
+            node = nodeHash(sibling, node);
+        } else {
+            node = nodeHash(node, sibling);
+        }
+        rest = tail;
+        divisor = divisor * 2;
+    }
+    return node;
+}
+
+// Every check a claim must satisfy, shared by both claim shapes.
+//
+// Inputs : [0] reward tokens, [1] state NFT, [2] receipt NFT (withReceipt only)
+// Outputs: [0] payout, [1] reward tokens back to the pool, [2] state NFT,
+//          [3] receipt NFT, [4] claimant change (no tokens)
+function claimChecks(bytes32 rewardCategory, bytes32 receiptCategory, bytes20 addrHash,
+                     int earned, int claimed, bytes proof, int path) {
+    // --- pool state (input 1) ---
+    require(tx.inputs[1].tokenCategory == receiptCategory + 0x02, "input 1 must be the minting state NFT");
+    bytes activeBytes, bytes pendingBytes = tx.inputs[1].nftCommitment.split(20);
+    require(unsafe_bytes20(pendingBytes) == ZERO_HASH, "root rotation pending: claims paused");
+    bytes20 activeRoot = unsafe_bytes20(activeBytes);
+    require(tx.inputs[0].tokenCategory == rewardCategory, "input 0 must hold reward tokens");
+
+    int payout = earned - claimed;
+    require(payout > 0, "nothing left to claim");
+    require(tx.inputs[0].tokenAmount >= payout, "pool balance too low");
+
+    // --- Merkle proof: old leaf -> committed root, new leaf -> next root ---
+    require(walk(leafHash(addrHash, earned, claimed), proof, path) == activeRoot, "proof does not match active root");
+    bytes20 newRoot = walk(leafHash(addrHash, earned, earned), proof, path);
+
+    // --- output 0: the payout, to the address committed in the leaf ---
+    require(tx.outputs[0].tokenCategory == rewardCategory, "payout output must carry reward tokens only");
+    require(tx.outputs[0].tokenAmount == payout, "payout amount mismatch");
+    require(hash160(tx.outputs[0].lockingBytecode) == addrHash, "payout must go to the leaf address");
+    require(tx.outputs[0].value >= 1000, "claimant must fund the payout dust");
+
+    // --- output 1: reward balance back to this contract, reduced by the payout ---
+    require(tx.outputs[1].lockingBytecode == tx.inputs[0].lockingBytecode, "reward balance must stay at this address");
+    require(tx.outputs[1].tokenCategory == rewardCategory, "reward output must carry reward tokens only");
+    require(tx.outputs[1].tokenAmount == tx.inputs[0].tokenAmount - payout, "reward balance must drop by payout");
+    require(tx.outputs[1].value >= 1000, "reward output needs dust");
+
+    // --- output 2: state NFT back to this contract with the rewritten root ---
+    require(tx.outputs[2].lockingBytecode == tx.inputs[1].lockingBytecode, "state NFT must stay at this address");
+    require(tx.outputs[2].tokenCategory == tx.inputs[1].tokenCategory, "state NFT must be preserved");
+    require(tx.outputs[2].nftCommitment == newRoot + ZERO_HASH, "pool root not updated");
+    require(tx.outputs[2].value >= 1000, "state output needs dust");
+
+    // --- output 3: the receipt NFT, commitment = addrHash || cumulative claimed ---
+    require(tx.outputs[3].tokenCategory == receiptCategory, "receipt must be an immutable NFT of receiptCategory");
+    require(tx.outputs[3].tokenAmount == 0, "receipt must not carry fungible tokens");
+    require(tx.outputs[3].nftCommitment == addrHash + toPaddedBytes(earned, 8), "receipt commitment mismatch");
+    require(tx.outputs[3].value >= 1000, "claimant must fund the receipt dust");
+
+    // --- output 4: claimant change, no tokens ---
+    require(tx.outputs.length == 5, "claim must have exactly 5 outputs");
+    require(tx.outputs[4].tokenCategory == 0x, "change output must not carry tokens");
+}
+
+contract RewardPool(
+    bytes32 rewardCategory,     // FLDCH (or Chipnet stand-in) token category, unreversed
+    bytes32 receiptCategory,    // NFT category of the pool state NFT / receipt minting NFT
+    pubkey operator,            // publishes and activates reward roots
+    int auditDelay              // blocks a proposed root must age before it can be activated
+) {
+    // ------------------------------------------------------------------ claims
+    //
+    // withReceipt == false: first claim for this leaf. `claimed` must be 0 inside
+    //   the leaf, and the receipt NFT is minted straight to the claimant.
+    // withReceipt == true: the caller hands their receipt NFT back (it is burned
+    //   and re-minted with the new cumulative total at the same address). This is
+    //   also the delegated / operator-push path: the receipt may live at a
+    //   delegation contract instead of a plain P2PKH address.
+    //
+    // Both pool inputs (reward balance + state NFT) are spent in the same
+    // transaction and are locked by this same script, so both of them run this
+    // function. Every check inside is about the transaction as a whole, which is
+    // what makes the two-input pool atomic: neither UTXO can leave without the
+    // other, and both must appear at the fixed input/output indices below.
+    function claim(bytes20 addrHash, int earned, int claimed, bytes proof, int path, bool withReceipt) {
+        claimChecks(rewardCategory, receiptCategory, addrHash, earned, claimed, proof, path);
+
+        if (withReceipt) {
+            require(tx.inputs[2].tokenCategory == receiptCategory, "input 2 must be a receipt NFT");
+            require(tx.inputs[2].nftCommitment == addrHash + toPaddedBytes(claimed, 8), "receipt does not match claimed total");
+            require(tx.outputs[3].lockingBytecode == tx.inputs[2].lockingBytecode, "receipt must return to its holder");
+        } else {
+            require(claimed == 0, "a receipt is required after the first claim");
+            require(hash160(tx.outputs[3].lockingBytecode) == addrHash, "receipt must pay the claimant");
+        }
+    }
+
+    // ---------------------------------------------------------- root rotation
+    //
+    // Rotation only touches the state NFT UTXO, so it never moves reward tokens
+    // and stays cheap (~250 bytes) no matter how many users are in the tree.
+
+    // Phase 1: publish a new root. Claims pause here, because a claim rewrites
+    // the state NFT and would reset the audit clock between proposal and
+    // activation.
+    function proposeRoot(bytes20 newRoot, sig operatorSig) {
+        require(this.activeInputIndex == 0, "state input must be index 0");
+        require(checkSig(operatorSig, operator), "operator signature required");
+        require(tx.inputs[0].tokenCategory == receiptCategory + 0x02, "input 0 must be the minting state NFT");
+        bytes activeBytes, bytes pendingBytes = tx.inputs[0].nftCommitment.split(20);
+        require(unsafe_bytes20(pendingBytes) == ZERO_HASH, "a rotation is already in flight");
+        require(tx.outputs.length == 2, "proposeRoot has exactly 2 outputs");
+        require(tx.outputs[0].lockingBytecode == tx.inputs[0].lockingBytecode, "state NFT must stay at this address");
+        require(tx.outputs[0].tokenCategory == tx.inputs[0].tokenCategory, "state NFT must be preserved");
+        require(tx.outputs[0].nftCommitment == activeBytes + newRoot, "pending root not committed");
+        require(tx.outputs[0].value >= 1000, "state output needs dust");
+        require(tx.outputs[1].tokenCategory == 0x, "change output must not carry tokens");
+    }
+
+    // Phase 2: activate, but only once the proposal UTXO itself is `auditDelay`
+    // blocks old. this.age is a BIP68 relative locktime on this exact UTXO, so
+    // nobody can shortcut it, and nothing else can spend the pending UTXO.
+    function activateRoot(sig operatorSig) {
+        require(this.activeInputIndex == 0, "state input must be index 0");
+        require(checkSig(operatorSig, operator), "operator signature required");
+        require(this.age >= auditDelay, "audit window has not elapsed");
+        require(tx.inputs[0].tokenCategory == receiptCategory + 0x02, "input 0 must be the minting state NFT");
+        bytes unused activeBytes, bytes pendingBytes = tx.inputs[0].nftCommitment.split(20);
+        require(unsafe_bytes20(pendingBytes) != ZERO_HASH, "no rotation in flight");
+        require(tx.outputs.length == 2, "activateRoot has exactly 2 outputs");
+        require(tx.outputs[0].lockingBytecode == tx.inputs[0].lockingBytecode, "state NFT must stay at this address");
+        require(tx.outputs[0].tokenCategory == tx.inputs[0].tokenCategory, "state NFT must be preserved");
+        require(tx.outputs[0].nftCommitment == pendingBytes + ZERO_HASH, "active root not updated");
+        require(tx.outputs[0].value >= 1000, "state output needs dust");
+        require(tx.outputs[1].tokenCategory == 0x, "change output must not carry tokens");
+    }
+
+    // Abort a proposal and restore the previous root. Un-delayed on purpose:
+    // cancelling can only bring back a root that was already live.
+    function cancelRoot(sig operatorSig) {
+        require(this.activeInputIndex == 0, "state input must be index 0");
+        require(checkSig(operatorSig, operator), "operator signature required");
+        require(tx.inputs[0].tokenCategory == receiptCategory + 0x02, "input 0 must be the minting state NFT");
+        bytes activeBytes, bytes pendingBytes = tx.inputs[0].nftCommitment.split(20);
+        require(unsafe_bytes20(pendingBytes) != ZERO_HASH, "no rotation in flight");
+        require(tx.outputs.length == 2, "cancelRoot has exactly 2 outputs");
+        require(tx.outputs[0].lockingBytecode == tx.inputs[0].lockingBytecode, "state NFT must stay at this address");
+        require(tx.outputs[0].tokenCategory == tx.inputs[0].tokenCategory, "state NFT must be preserved");
+        require(tx.outputs[0].nftCommitment == activeBytes + ZERO_HASH, "pending root not cleared");
+        require(tx.outputs[0].value >= 1000, "state output needs dust");
+        require(tx.outputs[1].tokenCategory == 0x, "change output must not carry tokens");
+    }
+
+    // Top up the reward balance. Permissionless (anyone may donate) and it never
+    // touches the state NFT, so it cannot reset an audit clock.
+    function deposit() {
+        require(this.activeInputIndex == 0, "reward input must be index 0");
+        require(tx.inputs[0].tokenCategory == rewardCategory, "input 0 must hold reward tokens");
+        require(tx.outputs.length == 2, "deposit has exactly 2 outputs");
+        require(tx.outputs[0].lockingBytecode == tx.inputs[0].lockingBytecode, "reward balance must stay at this address");
+        require(tx.outputs[0].tokenCategory == rewardCategory, "reward output must carry reward tokens only");
+        require(tx.outputs[0].tokenAmount > tx.inputs[0].tokenAmount, "deposit must increase the pool");
+        require(tx.outputs[0].value >= 1000, "reward output needs dust");
+        require(tx.outputs[1].tokenCategory == 0x, "change output must not carry tokens");
+    }
+}

@@ -1,0 +1,26 @@
+pragma cashscript ^0.14.0;
+
+// Per-user receipt covenant for the FoldingCash reward pool.
+//
+// Every leaf in the Merkle tree gets exactly one Receipt UTXO, created once by
+// the operator when an address first appears in a published root (see
+// `scripts/demo/03-mint-tickets.ts`). The pool contract (pool.cash) reads and
+// rewrites this UTXO's NFT commitment on every claim; Receipt itself only
+// decides *who* is allowed to trigger that update.
+//
+// Two people are allowed to move a Receipt: the recipient themselves (normal
+// self-service claim) or the operator (the optional push path, §"Infrastructure
+// / Optional auto-claim" and the push-threshold requirement). Either way, the
+// pool contract's own introspection fully constrains where the funds and the
+// updated commitment can go -- Receipt itself never has to understand amounts,
+// proofs or commitments, it only authenticates "who is allowed to touch this
+// output right now."
+contract Receipt(bytes20 recipientPkh, pubkey operatorPk) {
+    function spend(pubkey pk, sig s) {
+        require(checkSig(s, pk));
+
+        bool isRecipient = hash160(pk) == recipientPkh;
+        bool isOperator = pk == operatorPk;
+        require(isRecipient || isOperator);
+    }
+}

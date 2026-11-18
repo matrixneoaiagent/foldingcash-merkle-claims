@@ -1,0 +1,50 @@
+pragma cashscript ^0.14.0;
+
+/*
+ * ReceiptHold — opt-in delegation of a FoldingCash reward receipt.
+ *
+ * A user who does not want to claim manually moves their receipt NFT here once.
+ * From then on either party can move it:
+ *
+ *   release(pk, sig)      the owner takes the receipt back (or spends it in
+ *                         their own claim); the owner can always exit.
+ *   delegated(operatorSig) the operator submits a claim on the owner's behalf.
+ *
+ * The receipt input must be input 2 of a 5-output claim, the re-minted receipt
+ * must come back to this same delegation address, and the recorded cumulative
+ * total must grow by at least `minPush`. The payout itself is enforced by the
+ * pool (it can only go to the address committed in the Merkle leaf), so
+ * delegation never gives the operator custody of anything.
+ *
+ * The threshold is what makes the optional push path economically sane: the
+ * operator pays the fee and the dust of a claim, so it should only push when the
+ * user's outstanding balance is worth more than that. This is the on-chain
+ * equivalent of FoldingCash's current "minimum push threshold".
+ */
+
+contract ReceiptHold(
+    bytes32 receiptCategory,   // NFT category of the reward receipts, unreversed
+    bytes20 ownerHash,         // hash160 of the owner's locking bytecode
+    pubkey operator,           // allowed to submit claims for the owner
+    int minPush                // minimum increase of the recorded total, in reward units
+) {
+    function release(pubkey pk, sig s) {
+        require(hash160(pk) == ownerHash, "not the receipt owner");
+        require(checkSig(s, pk), "owner signature required");
+    }
+
+    function delegated(sig operatorSig) {
+        require(this.activeInputIndex == 2, "receipt must be input 2 of the claim");
+        require(checkSig(operatorSig, operator), "operator signature required");
+        require(tx.inputs[2].tokenCategory == receiptCategory, "input 2 must be an immutable receipt NFT");
+        require(tx.outputs.length == 5, "not a claim transaction");
+        // the receipt must come back to this delegation, so it stays delegated
+        require(tx.outputs[3].lockingBytecode == tx.inputs[2].lockingBytecode, "receipt must return to this delegation");
+        require(tx.outputs[3].tokenCategory == receiptCategory, "output receipt must be an immutable NFT");
+
+        bytes oldAddr, bytes oldTotal = tx.inputs[2].nftCommitment.split(20);
+        bytes newAddr, bytes newTotal = tx.outputs[3].nftCommitment.split(20);
+        require(newAddr == oldAddr, "receipt must stay bound to the same leaf");
+        require(int(newTotal) >= int(oldTotal) + minPush, "push below the minimum threshold");
+    }
+}

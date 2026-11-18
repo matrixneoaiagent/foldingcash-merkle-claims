@@ -1,0 +1,200 @@
+pragma cashscript ^0.14.0;
+
+// RewardPool: a trust-minimized, pull-based reward-claim pool for FoldingCash.
+//
+// One Pool UTXO (always input index 0 of any spend) carries:
+//   - the FLDCH(-equivalent) fungible token balance still available to claim
+//   - a `minting` capability NFT of the same category, whose commitment is
+//     the pool's only piece of on-chain state:
+//       bytes32 merkleRoot   (bytes 0..32)
+//       bytes3  epoch        (bytes 32..35, informational version counter)
+//       bytes5  activation   (bytes 35..40, unix timestamp)
+//
+// `claim` lets *anyone* pull their cumulative entitlement, proven with a
+// Merkle proof against `merkleRoot`, once `tx.time >= activation` (the
+// root-update timelock, §"Root-update timelock"). Double-claim prevention
+// uses a per-leaf Receipt NFT (receipt.cash) that stores the leaf's index and
+// the cumulative amount already paid out; `claim` requires the recipient's
+// existing Receipt as an input and rewrites it in place, so the same leaf can
+// never pay out more than its committed cumulative total.
+//
+// `push` is the optional operator path: with the recipient's own Receipt
+// authorizing the operator (see receipt.cash), the operator may deliver a
+// user's backlog once it crosses `pushMinThreshold`, without the user doing
+// anything -- funds still only ever go to the recipient's own address.
+//
+// `publishRoot` lets the operator roll the root forward. `mintTickets` lets
+// the operator create zero-balance Receipt NFTs for newly-seen addresses
+// (§"Receipt NFT" / the bootstrap problem discussed in docs/ARCHITECTURE.md).
+import "./receipt-bytecode.cash";
+
+contract RewardPool(
+    pubkey operatorPk,
+    int pushMinThreshold
+) {
+    // ---------------------------------------------------------------
+    // Shared claim/push verification. Not itself a contract entry point.
+    // ---------------------------------------------------------------
+    function verifyClaim(
+        pubkey recipientPk,
+        int leafIndex,
+        int cumulativeEarned,
+        bytes proof,
+        int proofBits,
+        int proofDepth,
+        int prevCumulative
+    ) returns (bool) {
+        require(this.activeInputIndex == 0, "pool must be input 0");
+        require(tx.inputs.length >= 2, "missing receipt input");
+
+        bytes32 poolCategory, bytes poolCap = tx.inputs[0].tokenCategory.split(32);
+        require(poolCap == 0x02, "input 0 is not the pool minting NFT");
+
+        // Pool covenant continuity: same script, same category+capability,
+        // same BCH value. Only the token amount and the leaf's receipt move.
+        require(tx.outputs[0].lockingBytecode == tx.inputs[0].lockingBytecode);
+        require(tx.outputs[0].tokenCategory == tx.inputs[0].tokenCategory);
+        require(tx.outputs[0].value == tx.inputs[0].value);
+
+        bytes commitment = tx.inputs[0].nftCommitment;
+        require(commitment.length == 40, "malformed pool commitment");
+        bytes32 root = unsafe_bytes32(commitment.slice(0, 32));
+        bytes activationBytes = commitment.slice(35, 40);
+        require(tx.outputs[0].nftCommitment == commitment, "root must not change on a claim");
+
+        // Root-update timelock: a root only pays out once it has been public
+        // for at least as long as the operator committed to when publishing it.
+        require(tx.time >= int(activationBytes));
+
+        // --- Merkle proof: leaf = sha256(leafIndex(3) | recipientPkh(20) | cumulativeEarned(8)) ---
+        bytes20 recipientPkh = hash160(recipientPk);
+        bytes leafData = toPaddedBytes(leafIndex, 3) + recipientPkh + toPaddedBytes(cumulativeEarned, 8);
+        bytes32 node = sha256(leafData);
+        int remainingBits = proofBits;
+        for (int i = 0; i < proofDepth; i++) {
+            bytes32 sibling = unsafe_bytes32(proof.slice(i * 32, i * 32 + 32));
+            int bit = remainingBits % 2;
+            remainingBits = remainingBits / 2;
+            if (bit == 0) {
+                node = sha256(node + sibling);
+            } else {
+                node = sha256(sibling + node);
+            }
+        }
+        require(node == root, "merkle proof does not match the published root");
+
+        require(cumulativeEarned > prevCumulative, "nothing new to claim");
+        int delta = cumulativeEarned - prevCumulative;
+        require(tx.outputs[0].tokenAmount == tx.inputs[0].tokenAmount - delta, "pool balance must drop by exactly the claimed delta");
+
+        // --- Receipt NFT: reconstruct the expected per-recipient covenant address ---
+        bytes receiptRedeemScript = 0x14 + recipientPkh + 0x21 + bytes(operatorPk) + RECEIPT_BYTECODE;
+        bytes35 receiptLock = new LockingBytecodeP2SH32(hash256(receiptRedeemScript));
+
+        require(tx.inputs[1].lockingBytecode == receiptLock, "input 1 is not this leaf's receipt");
+        bytes32 receiptCategory, bytes receiptCap = tx.inputs[1].tokenCategory.split(32);
+        require(receiptCategory == poolCategory, "receipt category mismatch");
+        require(receiptCap == 0x01, "receipt must carry a mutable NFT");
+
+        bytes ticket = tx.inputs[1].nftCommitment;
+        require(ticket.length == 11, "malformed receipt commitment");
+        require(int(ticket.slice(0, 3)) == leafIndex, "receipt is for a different leaf");
+        require(int(ticket.slice(3, 11)) == prevCumulative, "receipt cumulative does not match prevCumulative");
+
+        require(tx.outputs[1].lockingBytecode == receiptLock, "receipt must stay at the same covenant address");
+        require(tx.outputs[1].tokenCategory == tx.inputs[1].tokenCategory);
+        require(tx.outputs[1].value == tx.inputs[1].value, "receipt dust is funded once, not on every claim");
+        require(tx.outputs[1].nftCommitment == toPaddedBytes(leafIndex, 3) + toPaddedBytes(cumulativeEarned, 8));
+        require(tx.outputs[1].tokenAmount == delta, "the claimed delta must be paid into the receipt output");
+
+        // No other output may carry this (or any) token category: prevents
+        // the minting NFT from being abused to mint extra receipts/supply.
+        for (int j = 2; j < tx.outputs.length; j++) {
+            require(tx.outputs[j].tokenCategory == 0x, "no extra token outputs allowed");
+        }
+
+        return true;
+    }
+
+    // Permissionless self-service claim. The recipient (or anyone holding a
+    // valid proof+signature pair for the Receipt input) pays their own fee
+    // and dust; the pool contract itself requires no signature.
+    function claim(
+        pubkey recipientPk,
+        int leafIndex,
+        int cumulativeEarned,
+        bytes proof,
+        int proofBits,
+        int proofDepth,
+        int prevCumulative
+    ) {
+        require(verifyClaim(recipientPk, leafIndex, cumulativeEarned, proof, proofBits, proofDepth, prevCumulative));
+    }
+
+    // Optional operator push path (kept behind a minimum threshold so it
+    // cannot be used to grind out the trivial, dust-losing micro-payouts the
+    // old monthly push model struggled with).
+    function push(
+        sig operatorSig,
+        pubkey recipientPk,
+        int leafIndex,
+        int cumulativeEarned,
+        bytes proof,
+        int proofBits,
+        int proofDepth,
+        int prevCumulative
+    ) {
+        require(checkSig(operatorSig, operatorPk));
+        require(cumulativeEarned - prevCumulative >= pushMinThreshold, "push amount below the minimum threshold");
+        require(verifyClaim(recipientPk, leafIndex, cumulativeEarned, proof, proofBits, proofDepth, prevCumulative));
+    }
+
+    // Operator rolls the root forward. `activationTime` is the unix timestamp
+    // after which the new root becomes claimable -- see docs/ARCHITECTURE.md
+    // for why this is an operator-attested absolute timestamp rather than a
+    // relative `this.age` gate, and what that trade-off means.
+    function publishRoot(sig operatorSig, bytes32 newRoot, int newEpoch, int activationTime) {
+        require(this.activeInputIndex == 0, "pool must be input 0");
+        require(checkSig(operatorSig, operatorPk));
+
+        require(tx.outputs[0].lockingBytecode == tx.inputs[0].lockingBytecode);
+        require(tx.outputs[0].tokenCategory == tx.inputs[0].tokenCategory);
+        require(tx.outputs[0].tokenAmount == tx.inputs[0].tokenAmount, "publishing a root must not move funds");
+        require(tx.outputs[0].value == tx.inputs[0].value);
+
+        bytes oldCommitment = tx.inputs[0].nftCommitment;
+        require(oldCommitment.length == 40, "malformed pool commitment");
+        int oldEpoch = int(oldCommitment.slice(32, 35));
+        int oldActivation = int(oldCommitment.slice(35, 40));
+        require(newEpoch == oldEpoch + 1, "epoch must advance by exactly one");
+        require(activationTime > oldActivation, "activation must move forward");
+
+        bytes newCommitment = bytes(newRoot) + toPaddedBytes(newEpoch, 3) + toPaddedBytes(activationTime, 5);
+        require(tx.outputs[0].nftCommitment == newCommitment);
+    }
+
+    // Operator mints zero-balance Receipt NFTs for newly-seen addresses. This
+    // is the one remaining per-user operator cost in the whole design -- paid
+    // once ever per address, not once per epoch/distribution. See
+    // docs/ARCHITECTURE.md for the reasoning and docs/FINDINGS.md for the
+    // cost comparison against the recurring push model.
+    function mintTickets(sig operatorSig) {
+        require(this.activeInputIndex == 0, "pool must be input 0");
+        require(checkSig(operatorSig, operatorPk));
+
+        require(tx.outputs[0].lockingBytecode == tx.inputs[0].lockingBytecode);
+        require(tx.outputs[0].tokenCategory == tx.inputs[0].tokenCategory);
+        require(tx.outputs[0].nftCommitment == tx.inputs[0].nftCommitment, "minting tickets must not touch the root");
+        require(tx.outputs[0].tokenAmount == tx.inputs[0].tokenAmount, "minting tickets must not move fungible balance");
+        require(tx.outputs[0].value == tx.inputs[0].value);
+
+        bytes32 poolCategory, bytes unused poolCap = tx.inputs[0].tokenCategory.split(32);
+
+        for (int i = 1; i < tx.outputs.length; i++) {
+            require(tx.outputs[i].tokenCategory == poolCategory + 0x01, "new tickets must be mutable NFTs of the pool category");
+            require(tx.outputs[i].tokenAmount == 0, "fresh tickets must not carry fungible balance");
+            require(tx.outputs[i].nftCommitment.length == 11, "malformed fresh ticket commitment");
+            require(int(tx.outputs[i].nftCommitment.slice(3, 11)) == 0, "fresh tickets start at zero cumulative");
+        }
+    }
+}

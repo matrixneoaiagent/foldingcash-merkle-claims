@@ -1,0 +1,1807 @@
+{
+  "depth": 9,
+  "epoch": 2,
+  "root": "f2e27729d4387dd812e2b313fc123fcf4cbaa512",
+  "leaves": [
+    {
+      "addrHash": "006009e0ea829f97d14f3d43f3443c92b750c2f9",
+      "address": "bchtest:zqge6uqcrrhdetfs6vaaremqk333ymeqcs7tsh2pj9",
+      "earned": "64389",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "0122f65c707254e2d7798d5d8f60b27f2a14f937",
+      "address": "bchtest:zpsraakas9dyuunwxke6fsa552pamh44ds5wfujg4p",
+      "earned": "2519",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "0158a80f1dc7456591559cfb7809c00275f93cb8",
+      "address": "bchtest:zp3dgdgephmc75fw3qf2xdvraqdjfh757syr0muwlx",
+      "earned": "202294",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "01cd09720c2cf94687e0105dc04bde86dd294886",
+      "address": "bchtest:zp2mnj9w4m53kk8m70mqktmpua3lppw43vzq27czfl",
+      "earned": "276300",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "0233e5db60b0ba30a948572f9b6416187367fd3d",
+      "address": "bchtest:zqkqj440rdr2hkvg8vccepla5yxfmwl74vw5xveqwp",
+      "earned": "2403",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "0249d385bbaa80ea1277379f0133a65788b69c37",
+      "address": "bchtest:zq75pkpddunjzgqf63mkkjsdckw26vtv8ceme9pk3x",
+      "earned": "12269",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "031094227dcd1dd20e5758b2dd519d9f348637b3",
+      "address": "bchtest:zqln9n4kntnst0f4hlqe8uxr5vvpnuh6yuuunk4s5n",
+      "earned": "27703",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "0335edb922476ac70d39806344ae153b9ebdf215",
+      "address": "bchtest:zpcmemrxpngrv9dvjplw47hjvttq54u95v4846gyqu",
+      "earned": "127846",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "03ae71090d9e7491ed59cdfcab2d75bcaf82626c",
+      "address": "bchtest:zp6qzx2srn93tugcjkujsan6y3s3l8ae9g9fd0d894",
+      "earned": "171144",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "0413bc7d746b629d59c44f3e0e3c88b9bbd7438e",
+      "address": "bchtest:zrjtpjs06n95sf2akd6g5ep8vys0z44575rqzrgv8h",
+      "earned": "103",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "05ce353ea4b4e3da72b03f6c3ac40526c91eeb98",
+      "address": "bchtest:zp9vn6p7nwaa8parp27cgd358jpsamkskgd86t86dp",
+      "earned": "67087",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "07e9323dbc440a72c6bb1cae3d3f06d6a015bae2",
+      "address": "bchtest:zqq7yrkwkuf2y78axd6mvkrs6pfnte0tggrp0jtew5",
+      "earned": "317",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "087e0488b90979e562d21a160316a15eb46fb214",
+      "address": "bchtest:zqeqnnw377sayxr3ehpse8055nl8l5faxs2cwjzug2",
+      "earned": "219075",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "092b0789b095036bf4bc58e1d50aa41d5ffdc926",
+      "address": "bchtest:zp0frufkqh7ym8rvjmwmyq2hesff456npv6xrnzltw",
+      "earned": "15403",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "09c0529d38547a70d7f1701ea55be47f3d98af52",
+      "address": "bchtest:zprn3trefpchqthsvefk3vh5xw5a4fzjkyj45xcwwe",
+      "earned": "89028",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "0a158aa37e6a9964ff259827de6fdf5c8b8bab2b",
+      "address": "bchtest:zzfu0sew500xkjgav6csgtledfa4umrtcsgdgnlw3u",
+      "earned": "105245",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "0b737b1488b59cd416a041f9e12577ed857b9fc7",
+      "address": "bchtest:zpam6z5xwr573w74akvjd8xlhpvm2r3rxyxe4qfuj5",
+      "earned": "96729",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "0bd8b0313e8dc940946cf6984e0b2b84e3a112e8",
+      "address": "bchtest:zz78vd9w90jn2swd8m7uh4r20fawd7pemv2up3dkdr",
+      "earned": "236028",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "0d815913d49c6d26dfae0a9fa62564b8e2d06b9a",
+      "address": "bchtest:zq5d5jwvqfragd8f7r0knnyv8qg95sp8nv4x86ed55",
+      "earned": "20896",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "0da7fd59b7a1a4a359cba015fcca3417826025e3",
+      "address": "bchtest:zqjh4vvlpv8u3aea9erlt5ur4hl95j08kvk0fr6fes",
+      "earned": "258275",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "0f1412a4fed9b0c2545048411fec72bde77b6ac9",
+      "address": "bchtest:zzsft9h09qrm7dktdllh347xhjraewst4ckuqyypwl",
+      "earned": "50",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "0fce2abe1675a6aab2f49aec8132e9ad8b36ce80",
+      "address": "bchtest:zpu025yyky5j6vx4lac8td09jh4ewqmchvr6dtzd0l",
+      "earned": "5425",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "126c4339695cc135213a0129c4c28ff3fa42c6d6",
+      "address": "bchtest:zp5y83sapvh0u63q5690jjq3423k9wkrryx6ghnfl3",
+      "earned": "65599",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "12ab20bc16262b42e9fe3ae8edf633a97697c563",
+      "address": "bchtest:zp0gfgsfzthl8qyhrnmmhywfljrkey4pes8nr8ex23",
+      "earned": "28083",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "14a1303565bd2c74b1473041e692fa55371644a0",
+      "address": "bchtest:zp964y0w5fex39xtymg6yv7mp68vs43aag2dr9sqrs",
+      "earned": "147738",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "15361f7251080f9763f6aacc06f99decaa65c12e",
+      "address": "bchtest:zzp2zmevzrspxxhue3teaqz27pe47xw625qaglxse0",
+      "earned": "8674",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "162763aac5a9864ccc0202f7c4463ea79116f661",
+      "address": "bchtest:zpv6j5purzsr7sktxxvkzlycyyvjpe5r55f0ak3v0t",
+      "earned": "141198",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "17a34964b2f0b127cbaa1c6eefb52eef42b40c00",
+      "address": "bchtest:zzd29sqvaxdfkjk64gz7kwyezj6vfr6u2s8lunjzdz",
+      "earned": "55",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "181d85b2895e3be7c0930881126dfc1aa8a7daae",
+      "address": "bchtest:zq0uqa6as4c7gs6zvtzkegkg6s8typjn5sparktd6k",
+      "earned": "175",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "195750aca79ccec1c792ce68939dd43eca06fe70",
+      "address": "bchtest:zz5v02jcp82x450z5ynfuyk3ypdl8v820v7ae7scmp",
+      "earned": "23688",
+      "claimed": "21785"
+    },
+    {
+      "addrHash": "1af589f8644c9dead54743741e59e4f0b93a5e15",
+      "address": "bchtest:zqzvs3smwr3tl42j8ejul2gh0getgwfc9qshcncnwy",
+      "earned": "132733",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "1b036de0e9cd572d27971c8007a8b54d99cf534e",
+      "address": "bchtest:zp646a7c8gy9fzfqmvnzylajs8ukytcthcrv5xuy89",
+      "earned": "6156",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "1c2aefd2883f6cd51601a6e944a44bf10707fc07",
+      "address": "bchtest:zzzy67r8rdgdvc6v6gsydzpw9s3a0c5ewvpkjlrz0u",
+      "earned": "3285",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "1d31b57e228ab4e7de71878f1b5b1b67b777cf26",
+      "address": "bchtest:zq4hyfxlz3lq3su4ttyu8uudem75gura9qtu4glpaw",
+      "earned": "53",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "1d8e39253bd5f00ce24a71b7b2b974a595518c8b",
+      "address": "bchtest:zqtxjqcryvu50x6e7dfx4j4n93sjckdh4qay6qkrqc",
+      "earned": "34593",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "1d950c4daf2352a57a53531c60c97821e92784c6",
+      "address": "bchtest:zpgp4ckjakc5etcjs5np2dcud5607h3kd5efwlxks9",
+      "earned": "87",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "1d9ce0f4f421925189cff9db22ff35bdd994eaa5",
+      "address": "bchtest:zp92tvcfd2u72lmvvywm5nyh709l7vng5cvfgqknp0",
+      "earned": "1604",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "1db4fdddfc87b3184eeebfbfb790d5a69c5af2b2",
+      "address": "bchtest:zprn8rmcvy38dnymkymny43h9grt24mapyzuyy7v3z",
+      "earned": "9646",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "1ea5061d4a98233e3b19aaeff26c2d8221dcf9a1",
+      "address": "bchtest:zplwgq5u0aalnnrtuvsyn2m4zzmut023lyjads6cfh",
+      "earned": "141383",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "1ef50b01c0223c7500bcdab9da9aea8df7194685",
+      "address": "bchtest:zreq9d6fq5g26tr4te55eyzced693xk7r5y0z6lz3d",
+      "earned": "3195",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "20ced8c6ba58c6a7299325eedcda3e3bd8e6bc26",
+      "address": "bchtest:zz8fjg2cptxjw7u8e3nkq7jksmf4wr60gy448jg88q",
+      "earned": "54",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "220dfd358b8fb93d8a29ea75140741b9bf0783c9",
+      "address": "bchtest:zze9ye4pmuv0sagkxg5383gv3lwhjlpxvqd4kt9m9e",
+      "earned": "55546",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "22a17ae995e6538485611c1756c83aefc57086a3",
+      "address": "bchtest:zry7h3rvz7s289dx3hqr3yk3f74fguuhkqrnwvcux4",
+      "earned": "28036",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "231ab4e604b2c4e7a5c56f517a7cd757ff2ed7ea",
+      "address": "bchtest:zq0m9xlwpfl9xfp9v2way23ctpey3chszgr6tpq92h",
+      "earned": "57",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "250eaf77f4af772d9cfe6e16d2c9b48a7c175546",
+      "address": "bchtest:zq9dqsu0vwurgylc6uwhh35dkagfk8xeqsguec0dtt",
+      "earned": "83687",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "26398e84dd85015a54d9160186e50e46221618f1",
+      "address": "bchtest:zr9pwe8d06yg2da3wple9ls88c5vszp4ugvths67ee",
+      "earned": "49780",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "27a754cc83f4c978eb34fe3079a1ef7f6dcce94c",
+      "address": "bchtest:zp2hr94fwuu2q700ufk5vqdewp4u3rg6uc4cyeru6w",
+      "earned": "132379",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "284bb7d62584e1fcd03efa801f083b83162e4ae7",
+      "address": "bchtest:zp0lnnvutvgyrvrdqzry2uz5a8hhlckhs5v0ytgnch",
+      "earned": "11322",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "28a56e861dde64d69433d221ccd5c1c135ea6340",
+      "address": "bchtest:zpykn36m4afm8gmw3dn3c2f2drrykgr3xu4aceu52c",
+      "earned": "3309",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "29083961e30b6b099dd07be8843f409ffd1e90a9",
+      "address": "bchtest:zzkh3dur26lndeafq5kwcja7843syvalcsjwq985cu",
+      "earned": "192",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "2a6b10cda776b83ade039118dd68477395bf77fb",
+      "address": "bchtest:zqmymzhwgnt67ztfpzt296r2snsz5tcspuyasm8af3",
+      "earned": "103",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "2ae2cc3d10ecca979ee58293e88f00cc1c33a96b",
+      "address": "bchtest:zqfcdv9nvxdcd2lfk9psy6emhylfpygu3vnt5y2hky",
+      "earned": "2227",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "2b0123dc79393bceb98edb642612a9330f27bb27",
+      "address": "bchtest:zqyzymz7a8af9aa2hcs75jrjwhxmswshjsu94gnrc3",
+      "earned": "92968",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "2ba3c9917548fc3799c190985a8a91bbafd2e846",
+      "address": "bchtest:zrr7xy5ar9sl5ae36rn257xppyvgxn0eeq9gdsqtw3",
+      "earned": "2706",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "2c4c018295c2dab23349a546a9d7851eeee9ef2f",
+      "address": "bchtest:zpwft040apt7q9aqktayrmr4aq06h32zwg26fp2cgz",
+      "earned": "10180",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "301f43a0f45a2aedd086ce67e182f81c8019b6fd",
+      "address": "bchtest:zrze85x2tsk0r0u0gxm47aq8rv04cakhdgm08k6eh2",
+      "earned": "2395",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "30bbf0a44b4a1633a94d40d130e8318700e2b7a4",
+      "address": "bchtest:zzdz5marlvh498qgydlqeqx079pxpsww3cu9cl0daw",
+      "earned": "137850",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "31a8ee78a52466fe4a60b6789d5087ea8e5810b1",
+      "address": "bchtest:zp9njvk3fc783dwnkpdr30wt22jj6u5mwvx94rj298",
+      "earned": "41928",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "34c8b137d1cea831d4d7572b92c152faabc7f801",
+      "address": "bchtest:zqkwv5435ckan5suqdxzd0gpv937a6l3dcfrsf3yw4",
+      "earned": "225807",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "34e0979244469d626c06aa9e47605eb2c910dca0",
+      "address": "bchtest:zr9enucjnr3d3sj30cqywsmvnhz7e6wrtvxjj5602g",
+      "earned": "10628",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "3533c8a3d3c9e590326c8da263dc6d86e2495c47",
+      "address": "bchtest:zztzs05zh3mkqlmfcw8rcsgg836ze22nws3fp74x45",
+      "earned": "18267",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "355ed20ef77373c1013bdf58cc405a8ada7213e4",
+      "address": "bchtest:zpqj97uj7v9cpf5368w7xr6ua3swtsvr45kgc4jhgc",
+      "earned": "83856",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "361782fb1158ea9454dee0621086e65d94b75d74",
+      "address": "bchtest:zq0eukqheu96uzjzz5fq0etshh4p2r6v4cwt0ty296",
+      "earned": "73586",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "365d4412f34cfbc45b784833d7461027f6096043",
+      "address": "bchtest:zrc3jha8avaky0j22cx9rcj2emp2v69vqq4tk5vq79",
+      "earned": "8002",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "36b3fc178c6c77d4781d2d14ad41c65bbc5220c9",
+      "address": "bchtest:zpeahut87d7060wjaej7nxx9nr8dhh8tdsh9drjq7g",
+      "earned": "158696",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "36d26d72ca5a3767295cbe4c714cd8fa0efb4330",
+      "address": "bchtest:zr7tyaye9uqhhrhwmgfx5u8kk3mcrnn7vv4yhn53l5",
+      "earned": "9348",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "3751040d3c4d5022cbc42cd40845306523f441be",
+      "address": "bchtest:zryg7lgdgr0he2zupcjsey62u6nuzqgjl5pfjpcj4m",
+      "earned": "64863",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "382909001b96d318480441a6222d3fec74b7bde4",
+      "address": "bchtest:zp4qxd2hgd8cuhu8kyplclsrt0a23v2s2q4tjf7ayf",
+      "earned": "48900",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "39a4724a5feefba307e89f31cc80ec2aa9fd54e4",
+      "address": "bchtest:zzk6g65268gmnwuvkgyj3nvt62s4hx5qlswt4xwpkr",
+      "earned": "25061",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "39dd44d465a0475f6b3cddfa9039b8c120936bb9",
+      "address": "bchtest:zphqrhhu3fm4lw9hz0ygl86kvq65nuv9guq5lj54h9",
+      "earned": "163526",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "3c1a51317067207c836a6ffc34f60c22cce0e89c",
+      "address": "bchtest:zzk6wxsxve8fphg27267x9qflgxkdlkffck7nd2t3m",
+      "earned": "44084",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "3c447630c4c0f23eeda92e61d19a17bcae7a6c85",
+      "address": "bchtest:zq3rwzs4qt5sxah9u3786uqxpvdyvx9ezu52x8gmj8",
+      "earned": "211085",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "3d386174689013cb873af12198d6283b1b1fe6bf",
+      "address": "bchtest:zqkpwnvcnmtt6mstcy3eq5v4akkykl9h2urkayl7xr",
+      "earned": "185157",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "41045ff959a3069deec57a5148c6ef190e9810f2",
+      "address": "bchtest:zrjcpxk3cewpwgqaay2zswh469awrn22tqc5cpza7y",
+      "earned": "113976",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "424b1dcd6d46a9d9787e0ac81fc6ffb0c813a6ae",
+      "address": "bchtest:zz6hhunkre7hys9dmcm5wljdh4ntchqdacf5s7euuc",
+      "earned": "60263",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "42a3deb24d68507cd5a6d3b9284c167aa9a28bcf",
+      "address": "bchtest:zq3vrekxyfprjtt9fssaqsfflazdngkctgcrs9tycg",
+      "earned": "4469",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "42c54ce13fd33026afccbf3ab5729db33680085f",
+      "address": "bchtest:zpk55czk3ax56a4rg34c4wmzvaauuweynsugsm68aa",
+      "earned": "209495",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "4308da955c70ee6b75e45b8cd3416f107cec7870",
+      "address": "bchtest:zzuts6ymth7y3c0z07xxwl25srttxp4m9q34vuxl6g",
+      "earned": "2971",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "4398f63d3d32c9c2d7c18e2012feb1a598d6d723",
+      "address": "bchtest:zqngn5wue3fzrudhkzh0eh3k2su4h0e3vgnfyg2fpf",
+      "earned": "141166",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "446c8bfe8b777f63c7e57b9b1a24d8814e0ae430",
+      "address": "bchtest:zq96humwxk80q2xlp3p8q76ervmuu776rvtauk9272",
+      "earned": "5286",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "459f6cf9ebe46ed4f65f0bb770c32cc1d01ae124",
+      "address": "bchtest:zqxdgn9dplpgkf387xyxs4r6v09umkx87yttz4087y",
+      "earned": "268863",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "45d4eb65d0edff53587fd7477fa1053be89bef97",
+      "address": "bchtest:zqef8kr67wuyvjww0h0pdpyyeaywz5rm8qamr3jznm",
+      "earned": "92",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "45e8d6a5f56367bdc0c5a15c1854ef5fda5edada",
+      "address": "bchtest:zpalscwfy75hl9vpd0jpm9x09w9haluw2v2mzw7y4n",
+      "earned": "97536",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "46192590a25584510dd46afaa336883b3c081bab",
+      "address": "bchtest:zrwzvetf9ms8s6ga60eqk06uuhl0gypvcsduym4m6u",
+      "earned": "109862",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "470d50be9cf9206ba2fdae52865f47b092326ee1",
+      "address": "bchtest:zrpeq4hhsesektfdwwedxue9sdkwak5ejg5yxvc7qv",
+      "earned": "1826",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "4911a3fc5ae9a943e1eb110830244b2125f0ff58",
+      "address": "bchtest:zz3f49qdx4p46vl97az4zpq39mjl7xzj3gsp8frlp2",
+      "earned": "63125",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "494b2a665db1be57055b1c2b8c9ba017e8f3c14a",
+      "address": "bchtest:zqfpwr43n5eg7d72xxd053zhax063sls4g6e60ytdy",
+      "earned": "148097",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "49edf4bb94483248cfb1de6a63d5260a92a09eff",
+      "address": "bchtest:zq4mwnycysjhtceaxv9uyztvwnyntzx3ks6zxasmpm",
+      "earned": "79199",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "4ac075092c9745f0030e243f886bea462bac7f31",
+      "address": "bchtest:zrr6lt40tclav8pc3l9mv86sc736cfumes4rfgqr3v",
+      "earned": "596",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "4bcb3543f1fbd2762a3a6ecb248a7c2aeda3d043",
+      "address": "bchtest:zpvhmtwu2qw3jmgqgs6y368ufc0622z48ctnc9p5kq",
+      "earned": "182028",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "4be7bce906b6656eef3895123789acc92bf6793c",
+      "address": "bchtest:zrq8t3rs2ecce2j0728u7zmtue2kw3zhzsylm840rr",
+      "earned": "217877",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "4c2af80d7c1272378bdbe4323e44b6adc86ce3b7",
+      "address": "bchtest:zqujmxqulffu3554mn7tp62td6hchslqvstj3d2xhc",
+      "earned": "76669",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "4c7c9ad4f0c90302fb0ec80704b82b87b6ae6e66",
+      "address": "bchtest:zqnv65kc6kejvxnmzrafttjzh0ahk3pngy7rvl5gvv",
+      "earned": "13802",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "4d45491dd5c1d6e04179198bc26f6a49e4313d1e",
+      "address": "bchtest:zzur68tzclph7r7wa5ye3k4jr6srqkrzdyquftn5x4",
+      "earned": "254497",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "4d76d8a5d71ac077846ef5e3e83541972eb4ae66",
+      "address": "bchtest:zp77tmhs8um9h7fqzgvs7jzwswyc7p2xtvgj7ya93c",
+      "earned": "299",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "4dbfb1a7147531a564c2065e46856e3d21c9c099",
+      "address": "bchtest:zr2s3s7pym6g2ctdewgwxyn095qqxwl9uymsume8lx",
+      "earned": "208062",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "4e288b1bdcb64b73d13e1377a677b83d63b495e8",
+      "address": "bchtest:zpefkkf9jvxd03qc3gnfepxpfucdfkh4tqmtcr5q4e",
+      "earned": "160095",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "50c078be1cb303788528ba0a9808a4fe40878b3e",
+      "address": "bchtest:zr3hegwa9teum2xcjg83t2w4cmpunr9phq2g4ejlur",
+      "earned": "81533",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "544c2211c1a5ff3b23165377131d24517a505fd6",
+      "address": "bchtest:zzlvfqscaq2lrmn6arvxsa2x0zj80sj7mcauhf6r3f",
+      "earned": "32219",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "564a7850f0fa062625f6f7195d6c37e4ce546610",
+      "address": "bchtest:zqt9wm0m5q2w78fyx99760nujx4f0ekp9uuyg7477w",
+      "earned": "104542",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "58346ae47f27e416d8a64707673f5a2a620f1a74",
+      "address": "bchtest:zppnfa9j7p5a23ngset7x5chy2fr3capaq8cqdenhf",
+      "earned": "258245",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "59368af6758a2067fb3583fa92c9317725eb1609",
+      "address": "bchtest:zpalqspqrlnfmhqtpurv88zjdqfyxzfxlsh96gjmqv",
+      "earned": "57152",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "5a1d674197bfa8dd62dfdd4d39eafa70696773b9",
+      "address": "bchtest:zpuuu46g4ps44ea49f03g55nwptkzrqh7qwz2qsmdk",
+      "earned": "36380",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "5bfabc3d0e91ee9e6ddf63323b7a52a586b29907",
+      "address": "bchtest:zzhzflw4gqvdqy3z33sdyl7s63vnr8avms3yafuasy",
+      "earned": "127169",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "5c70cfd515cd7d50ea27d5034642dab65e490832",
+      "address": "bchtest:zz2wt4nwapy5kzghwhes9x43upj9lr2lasa2llpu9k",
+      "earned": "265920",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "5d43d94eb312d35efca16767d1ba9051ccfec6c8",
+      "address": "bchtest:zzl2quej4apea9ugmykdewreeq0y8yr2fvpnq8vwzg",
+      "earned": "32841",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "5d8febe62dae62be949f01da7c94431c45ca5f7f",
+      "address": "bchtest:zpmc74xv6v2qzqlwljjwgmre24eckxj8vy0h9jqktq",
+      "earned": "76160",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "5e966e1ef62c72397e0760df9f3fe065ddf9f767",
+      "address": "bchtest:zqz998h4g4napf0m0j5dmkc4ukcq3nr9nurll0vkzf",
+      "earned": "60000",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "5f955c53c3cccbccabdace2cb496e3f2341e8af2",
+      "address": "bchtest:zrfzmcqla36t5f4ff5ry2cwxua24lxv90v277n4pr7",
+      "earned": "11343",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "60395b1fdf683795e0ac4bd63478e420c6f26380",
+      "address": "bchtest:zrphlxc3urzcg2ka2rwflcnzyrd5z0zy4y7d77t7h3",
+      "earned": "13990",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "61299240b5af581fafe89452997741c9c5fe1537",
+      "address": "bchtest:zpcwnhknvydm7xwm8e64fr83krtsdgd7kgf86hexqn",
+      "earned": "83773",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "61333ee4770642d5e0f5f038b100ded44e85952a",
+      "address": "bchtest:zq5vmangn97275eksxj6pulfzraejlaup59flv6887",
+      "earned": "62",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "62342e14d9109ac90a589fb1bb944b3ad47025ba",
+      "address": "bchtest:zpmut4znanzkk42uh654ptqhhfmqq9yz8vzc28jrrk",
+      "earned": "209189",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "64dad91b1613c5874422e6b8ca1a1790350b4462",
+      "address": "bchtest:zzndqec94zne3j5hc0qw2fgg2zfmelnj7seymw4an5",
+      "earned": "9215",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "64fc89c3bdb91a4261e3d9b849fa1ff36a4af39d",
+      "address": "bchtest:zzh2yshzf3d303fd2m4f9jzwlwaqg8dn4chd5w36gd",
+      "earned": "4037",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "6540f353a392aa094b6d3ae1a7a360e966558918",
+      "address": "bchtest:zqple5d5rjjgp5fdkkt70c90d5sjjgdkqcd34vw0py",
+      "earned": "6746",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "662cd0b6c69c6cfee5fbfe42a8d6b2eafb99f074",
+      "address": "bchtest:zr6fhzp0ewu3vxy9ygsur4d83lrns722xv2mjx4067",
+      "earned": "211406",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "66edb8b9f9513f366362e4831459dc6872cfa489",
+      "address": "bchtest:zql3pv9h4v2h3sw9zjx7p2pz7kmt9pw2xvkcsm4ded",
+      "earned": "12389",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "67a065c1957dbb5fca4c0a211403682fdf65efb1",
+      "address": "bchtest:zprrss6v2nkhaskjks4mkqdapkw87qrahgl5tppnvw",
+      "earned": "253999",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "69a2d31981668a3f398ef1fd7ab95e9994536152",
+      "address": "bchtest:zpkqz0sjjfk62cy3fw0wrrnk54vecy965cx8a0k44w",
+      "earned": "176373",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "6c6d6aa03d5b7994b3bf9e4f497e80451045855d",
+      "address": "bchtest:zzk9pg7j8wqtcx95x3m5anpsauglgtc0n5l92uvkwp",
+      "earned": "144572",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "6cb84c3f61e19255cc4828583dd18f3d9b33ae18",
+      "address": "bchtest:zrntpf286lvkgnceayvrkah4kw8jc332asxq27cnak",
+      "earned": "65069",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "6f6e1623fe2434df220e047c17ec718e47348e7c",
+      "address": "bchtest:zpu7uvxnkrknwpxcdmccgqf3utnmj7htssnmtr34qk",
+      "earned": "9911",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "711ac74740248a9e03ab83d78aac95b808e6dc2f",
+      "address": "bchtest:zzszzljvrnfn8ve9lw3v67fjm2pv03heuu4lv7ktxz",
+      "earned": "32349",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "7129e6306a43c97a2fd1aa64b1a226dccc959dec",
+      "address": "bchtest:zqu6jxc3wt8thn247tc7redxlxesh2mgvstnwrz3v7",
+      "earned": "179610",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "71de27eccb2a6812288d093470636ebaab4832f1",
+      "address": "bchtest:zpyj7pfw4rxql4ay4wekcdgljp6qh77nxstu0458af",
+      "earned": "67218",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "725d9e4ee9f496d993661cbf8812c6be10753771",
+      "address": "bchtest:zr8nq47en4sl7evgw6xfanredwyt2p466c3efu3mty",
+      "earned": "81258",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "728d51f6c9a72431bf874e28d5692c4a24645bbc",
+      "address": "bchtest:zptzgvgs3g2d0a7fzeqmeu3t50cewd5l6y8l40ff5s",
+      "earned": "34987",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "732db3f1aa45c809b838df91dc132c53b99b0ce5",
+      "address": "bchtest:zqng5esnushch3gadrdrj2vedpdvres8zudw3zzxny",
+      "earned": "89955",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "73fcbd692bfc8cba7bf06a92a7150858ba85c27a",
+      "address": "bchtest:zzrua8758yk082c2gzuwateez8rd8p5vkc68jnptu2",
+      "earned": "203339",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "74974e1153da1e945fcbf691ccd8e83c549c8186",
+      "address": "bchtest:zzr6acyg633agsscn8f2ftjpzqm3m7qwnqsvk89lpw",
+      "earned": "88558",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "74e696008195d7523dbf0c2316de53b863fa7d0e",
+      "address": "bchtest:zzdf7sz5qc7gy80kx67rzx03hhe8efxgjcj90pfsc4",
+      "earned": "35688",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "75585a29c974eadd56179ae2b0f5a55fa0c58a7d",
+      "address": "bchtest:zzray539yxpmzxquty26wmaams3t9ygfpc8fga7nka",
+      "earned": "17458",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "75a9adc4fc0a2ec7793edb28dcb74a8174ef3438",
+      "address": "bchtest:zpp6lp4wyl030nfekwntfcyt66uttmapfcm4nc8479",
+      "earned": "51",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "76a079c69553402730aeda3de9bd8e311a079111",
+      "address": "bchtest:zqgu80ylg4ms8a4alaf6sm49fhxjku97culxcvqnnl",
+      "earned": "18263",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "777e5200b0a08641a8e95e4cb692d6560c3d6757",
+      "address": "bchtest:zqz4ekhjkjexkylv0yll0r0dj345zk6mac8ffgnaek",
+      "earned": "1544",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "77d5c3566ae5b046caab52bc0d106ec1540a6061",
+      "address": "bchtest:zpnnu7f394tg07lenj8h6cthmttx9j8hjqqdc2f3g4",
+      "earned": "3513",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "784528d4e4b2e7e7616033e4a7c4c4dd1b7e59db",
+      "address": "bchtest:zzatda4d0l7nkyzu0mdxlslqhfs2402fe54d2gp6v5",
+      "earned": "187",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "794103a7cd9b0796ea417aac6173b02ba6fd280f",
+      "address": "bchtest:zqw9q40gfrd6c00xqv7wac9ltf4uere34gqdc92a9f",
+      "earned": "202141",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "7a0cf54c4998acb4f1af1a2d1f3bb6d1670e4037",
+      "address": "bchtest:zr4mva3avywha7sm78vld9nafk2j0qeg8vya96a2ur",
+      "earned": "1387",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "7b406ce6f771df2f73afd12696aa119606d6af36",
+      "address": "bchtest:zpgf4rgp5h3a4d3j8cs59s5urct7awllxum4d0xaa5",
+      "earned": "20582",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "7b47c47d64b72a4562913cf3dbe0e018c713fa83",
+      "address": "bchtest:zpaxe0f72xxgm5k5adzg99f22xqy6z8uhcktcskafu",
+      "earned": "86224",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "7b68c6e710a4127391460ca3f5ef9aeeefe737a8",
+      "address": "bchtest:zrs9zppz2gpqfgk0ezhlutw85hlyxsngnv5c52mvn4",
+      "earned": "229019",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "7c99851394fd2c393b760f85ff18910bf8309279",
+      "address": "bchtest:zzk0q9qseaxt5mjeppcs32a5ckd8lss3jysuv3ekpr",
+      "earned": "185100",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "7d3fc8d33d6435e31203770fc96af5a52a3012fc",
+      "address": "bchtest:zr9pp7qprrcwk0uddjaflzy3766vl6xdhguqa3u532",
+      "earned": "27753",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "7dd07e7a16180f136b699c18c28ac323ab3af184",
+      "address": "bchtest:zp3myffujap4n0sx4488467jeerdk3682cyrdt3etx",
+      "earned": "161338",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "7e4de897bae063b3ec7af2940cb8d8df45d85bf2",
+      "address": "bchtest:zrmawhvzzwsqh7dxaz6r36kt8hughre0vq6myfesvh",
+      "earned": "59550",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "7e8c94b5f74196d05d3d6dfdbd80376f1081ea76",
+      "address": "bchtest:zzrd7z62ad8sj2jjfw33z2zanx6np9xjxy7ck2re4j",
+      "earned": "101151",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "7f7daaf05c082c2b3e7ab70f2827db8909b0072d",
+      "address": "bchtest:zz6l9elr8496ddjm3gvcghjjc2yhkdmy8gwen800jt",
+      "earned": "92086",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "8150262b8c42c4c668066c1c4b11a9026899cb13",
+      "address": "bchtest:zzhtljfzdjcwf4za82cwnav6rh5uytnuscr9yan8kc",
+      "earned": "1403",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "81a1b0396a62197330cc23b13979a7a161c7d2b8",
+      "address": "bchtest:zzhngc4dq3w033a4ushkwrctp2gg4qxrrcl9y0wgjq",
+      "earned": "365",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "8481f6b718a5b23a240bdf70c45197f0e413a44d",
+      "address": "bchtest:zzpgnxtwzz5598jrsewjxq07td3pwdqguql4qwvk3f",
+      "earned": "392",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "87118d948be9c7886ef3ba19b77f5643f69b7dd0",
+      "address": "bchtest:zqgkxurj4pmlynad3d83ys9q3lqmhaaukqstzhkpze",
+      "earned": "14115",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "87212bfbc1039f91faff34d7e25a0a99c680d377",
+      "address": "bchtest:zzrvxw0e443h5zdlktfjhap55wth99272uj4ffjyvf",
+      "earned": "104945",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "877177cae11d13327db820d4c0b82c950946a203",
+      "address": "bchtest:zq9fn9ehxtk8l2jjd604et4hvx03g36n45djhzmy47",
+      "earned": "226085",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "87c3e89d09278bf6ac8460bf30e412e864c3350f",
+      "address": "bchtest:zqjznncqxl9swrp3eyyf934qevc3q8qh75h9l85k8e",
+      "earned": "4641",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "885a7602710280d2a9ce8d55e93d4b7f23c2bc82",
+      "address": "bchtest:zp4lceep9vykc8mfk5kawn593z0qhy79zq9yck8q0g",
+      "earned": "160338",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "88f988a5efa13a862779e6ae3eb840b79c92612d",
+      "address": "bchtest:zqul6slervhn6yug6t74lx950c842vd95cnzzx9mdd",
+      "earned": "9795",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "8a649f5c900bca37f4e9525576490c1674c12ce7",
+      "address": "bchtest:zq90wp4n5zvce48rjdlv7rzcy5fdh4zluyex8475e6",
+      "earned": "114878",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "8a983eb003eaeceb3d0671cab7e483d1f4b0d680",
+      "address": "bchtest:zrw46hd5dcwznqknwftmg9wup2z0r0eqcg0rkg85wc",
+      "earned": "19992",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "8bde384d99cfc75a7be6113264c531ab11051646",
+      "address": "bchtest:zzujfxx4x95uwrsd9km5c7dxw2y2xle0qyj0slxe2w",
+      "earned": "110536",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "8c6b8cdf045980bcec53d06b510808941ad57803",
+      "address": "bchtest:zzymmtf5saaz9aljf2w3whtfdej9p2qc9srlcr8sxs",
+      "earned": "127100",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "8c8b8d8f9ec86aa3606b1fbb1be90a58e8e907ab",
+      "address": "bchtest:zqj627s7mglugze0g4gz2dt3tvk8l0kw6vfjnhu3c4",
+      "earned": "2202",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "8cfa161d9e07737ff5e62b44a634d63e7eecdbb3",
+      "address": "bchtest:zqcs0mkryr9m2hrxfvnkfctjwz2yes75zqqpqs80cs",
+      "earned": "139170",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "8eee961f06b96729d77aaa66e8bbbfd629bc52f3",
+      "address": "bchtest:zq2cvel8yqdakdl2xxepm8chxt9nj4ggwq0gaad2d7",
+      "earned": "201237",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "8f76ce8c76be41a80d00d33b035ea06d4d950f41",
+      "address": "bchtest:zzxntku57jdxegux8u62zuduhs9uqzj8354atc26aj",
+      "earned": "15800",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "8fae7be0b010baf600f5c8f04967e6aa29506eba",
+      "address": "bchtest:zz3upujh8c0sk8hxlu6fegf8ujnsam3nr50vr4z9pe",
+      "earned": "87",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "8fc85111b520f2cf8c29a6eb62415fdafd32592a",
+      "address": "bchtest:zr9s0nstszksnrlwzvsm3p9gnm4f454s8qdky0fy46",
+      "earned": "32179",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "8ff4154dd6c5a54dbb5a875f93c935f6e1998a5c",
+      "address": "bchtest:zqshxnu9ppknz0ghktqrghkq2gwved2zfv0f0w435c",
+      "earned": "535",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "9017ece6e9c13b78c81e46e8f04f3346d76edb0d",
+      "address": "bchtest:zzddudg64hcwkjhmqnzzt2d4p3na48t8ac64l7v2ug",
+      "earned": "192974",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "904ba694302182b040f14aaf5905057c4594c5cf",
+      "address": "bchtest:zzaesmm00hu94a8d2jdrawdvan3g6p4u0c6dmufjjs",
+      "earned": "91092",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "90a1cca50c896b97d96e0c65229291e3a1778f28",
+      "address": "bchtest:zrth82j03nrrmapg8kwhj56cyxg8prrndq5qz8xltj",
+      "earned": "44657",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "90b920b30ea2319e2393ad47b2703afb74e26d80",
+      "address": "bchtest:zq0j9r0ehq398ey465990emg9ryz9c8885jgrv9vwq",
+      "earned": "155841",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "90ceba8c8c9fe1d0600a246254e9723ca0c83535",
+      "address": "bchtest:zzpu30kgvpgtjn0n8rjevmzu3mffhwfxngcx0nnjk9",
+      "earned": "18430",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "925530085e8061273688272b5bcdd2b6426200a8",
+      "address": "bchtest:zpxfx8umu70tz5gt0alkj5ey44ggv8kqqqjlkp6pys",
+      "earned": "98",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "92fd8e4f25a8eaf65093a231c9125f2d703bff8d",
+      "address": "bchtest:zrvzd5t8lphx99gmltkd47fu6v09egxkhv5nsvkm9n",
+      "earned": "262600",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "935cae97b83d8869ffef82071cd5c51c90c8b1bf",
+      "address": "bchtest:zp5vempwfxdscnnwj8t3qaqldca0clckxv0gdf0c75",
+      "earned": "27816",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "974566f0af7efeb9c1c5b3fc13b250452c0e916b",
+      "address": "bchtest:zzxgxjxakln24ksnx3fa7cxgu8gj85w35vksg8tws6",
+      "earned": "267036",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "97ac75c36fd3e3b34de15ba20895273b02c2ae22",
+      "address": "bchtest:zqzhmk7pu6yt460ynl9ll56ma4cnj4203u3y8px3xe",
+      "earned": "38762",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "97ba9afc288d9feddcae58d5b271a26300c60e26",
+      "address": "bchtest:zz7qpztknn2py9lv65d6rqez2l8hkmp5tyc33v04mv",
+      "earned": "1487",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "984ee44d02c1d94c8614aa2d1ff7f11b3ec60fc6",
+      "address": "bchtest:zrnfn9hyp5q9aczkuhn5sqd7e899afl92ufwt2389y",
+      "earned": "711",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "9ae2d65e5b667f330d0ca9d6771e8bf2b3ed616e",
+      "address": "bchtest:zzmw0gpums04zrr2k3hn4z349e8q4huazg89q2ak9f",
+      "earned": "12932",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "9b17aa4f5395fb8b6b54776f623abe6d588bacca",
+      "address": "bchtest:zqs35hywhra9lfr8nx9pj66xk7mmwjv42q082pgsh0",
+      "earned": "215319",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "9b58cff89269e32384a4d15287c5b0515369d786",
+      "address": "bchtest:zrgdzkj89z6v2lxvpquunn92l3wyw7xq65cu926uek",
+      "earned": "55",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "9c80e5a2f4183a7866177f0073b186ddab4cbf31",
+      "address": "bchtest:zrlseq56j0pataamnfe4xjc4eamz4rtqnvkpv93grt",
+      "earned": "183452",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "9d4ec250612f454006c9008b0b703f535ffacc99",
+      "address": "bchtest:zzargp7kgs6jrqa473myp4hg08kvcdrn8su5fqe95h",
+      "earned": "178",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "9d8c3e340cdf66bef46507d26c14f50e3b8d12b6",
+      "address": "bchtest:zp66u98ny8fpmv9r6cvdu8yqvhvcmcac45djxfjkpr",
+      "earned": "26816",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "9e9c2a1f45d44c799d81ab9487dd03b756bbe636",
+      "address": "bchtest:zz02jlpfssg77xsj0xpqa2kv05nf8fgfdct2vacv8a",
+      "earned": "30930",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "9fc998b76d19b186f08baff1f60593e3b05b680e",
+      "address": "bchtest:zz4q3m0khc5x7uszv88e63twsv94u780ssv6pkdda8",
+      "earned": "198214",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "9fdf124cb94036e53782c9793ba6c6867b063ed1",
+      "address": "bchtest:zqc5n3804ch9uqshrlvld5sw44vackpm6srwtauaxg",
+      "earned": "16699",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "a2152b369fd4958c01a7f78d4d8cdeff8adbfe4f",
+      "address": "bchtest:zzw2wcxezruwe9j7099a0mzzezkffcyypvr5n4qusz",
+      "earned": "214779",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "a447f073cbe0746db8aa29faeb7e4b18fc9edf6a",
+      "address": "bchtest:zz52s8ng6m0mhafguerlz0st356vtzve0cleq9n5ds",
+      "earned": "247232",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "a4928cb7d6fe5244a0132c37947d58935edd42e4",
+      "address": "bchtest:zrkqjp90c46em243nlz2rudjkjrk4r3p0qmnns3pxn",
+      "earned": "78",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "a4d3aec3ca6222cd3bad4e17e09ddb28b68d118c",
+      "address": "bchtest:zr2p5q44vtca25vxg3dxl58hgrzlcapvxqrck2jnvn",
+      "earned": "97918",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "a5d572ab65102c392f8f97bc308d90e6b7421ab9",
+      "address": "bchtest:zzhgdx9h9e57luu9ew2q9xpqls52h95hkgezl0qxq9",
+      "earned": "14371",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "a5eeadfd14908bf235bedf55b16c8f7554b25d94",
+      "address": "bchtest:zzggdtmnlqud2wsl9a7wt69p9cjsahg7ec4ugwfda3",
+      "earned": "36430",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "a6782a34fad29822224af08a0801853ca652ae2d",
+      "address": "bchtest:zphqwfxsj82z9hylr6fjzwa6exdvdc8cmyde34yn7u",
+      "earned": "113416",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "a7aadefe482df3cae4a3f1757203f4b9ac134ee8",
+      "address": "bchtest:zrmukm8pef36pk4ghc0x6fs27vnmwkuaaq6t573y0s",
+      "earned": "8202",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "aa326b99d5e82c5e212098489ca2a0d4085e7115",
+      "address": "bchtest:zqjhyzup5grfvew35ht4tmhxw7zg2kssrvzs3smjc5",
+      "earned": "84",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "ac1fbb8e86c1b0d1bc848dd79706d2f3658708cb",
+      "address": "bchtest:zzvc789s2vrghu07g65cyavlelruqk4xmghd46y3xt",
+      "earned": "3049",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "acca32dd1013c4535ed7ac3a6ea7831b2154586a",
+      "address": "bchtest:zqkqmah7up29k3599pkf7nwkn98gn5yunyphem4kzq",
+      "earned": "93139",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "ae60f65a09ebbe37b6a6cded4538fcfaf3bc3d02",
+      "address": "bchtest:zparp65xwdxyptlepf9u98vp45x0tlry2qt3rs6h2j",
+      "earned": "16107",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "aeaffbfd8f17adda704bd7cbff4d44fd317b391d",
+      "address": "bchtest:zqsql4uaf85hms35gwwyv55t5kxd9s8mys99q6tteh",
+      "earned": "118511",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "b18683b36f5754fff733359ab47e113c09f2adc4",
+      "address": "bchtest:zqdl9c6n64jqwml0wyq5shrdkxz3nq70jvqa5rrla2",
+      "earned": "224125",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "b44033c7fef8d27c23558dfb1800d8003a3bcb79",
+      "address": "bchtest:zp4tj5fumgfaf5c44g5rjtf2rx05c6d36glnueeh0s",
+      "earned": "123584",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "b8079c52898a661d8f8876be928df57165c5eae7",
+      "address": "bchtest:zq5sljle6su2z5jc8jk4q8jsr6ur7gaufgtewtk2rc",
+      "earned": "201",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "b9ecf100781e1d79ff1d11de65e39e253d7fc514",
+      "address": "bchtest:zzjjt5ar80d73t55d8xz6h7z5v4x9jvrlslcnycm0t",
+      "earned": "21614",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "ba68a359ffc09bd29e66c856565d379f6d4d4a4c",
+      "address": "bchtest:zpjlmaf5qu7t8fjcnwlhy6vr2gh5pq8umgsg2kk6rc",
+      "earned": "109299",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "ba9b782e105c86e29028975bb4706009f03d94fb",
+      "address": "bchtest:zq3az6s7rzxfjc8m8cy96jawfmkrykax9uwdvjxuw5",
+      "earned": "7342",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "bb73b46f7655622dd2f3a39350419b36f6f8ab4f",
+      "address": "bchtest:zq0stkpwwaydes6kwpr8h5yv0r0cn54uauaz7j5cpm",
+      "earned": "170990",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "bb8176516042d6df23c7838c95be4bb4c876f173",
+      "address": "bchtest:zp3087y7683zcp7g5k8f6htt7lwv529vkgnv4fugxt",
+      "earned": "72",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "bc43f5fb814c9c9566374fd9a00a0af4db2343a5",
+      "address": "bchtest:zqwrn9n64u30k8f9rkrmfaa5nv5d2fsg0vvm0lvnwx",
+      "earned": "11668",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "bcf31cd2339594fd1f3ae20b6bb5b5dff3ef6fa5",
+      "address": "bchtest:zr8fs4atv9jzztqaxsrsfcrx4chfe329eu05lgae60",
+      "earned": "5233",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "bdcaab22d97a2a02466e600987ede4f183d441c0",
+      "address": "bchtest:zq3sxpvs3uhnsa3heyx52tq2q3ggxdwx35wd32n3xs",
+      "earned": "15244",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "be5d2c29e9bdf1afcda1a389e5407fb823d411d5",
+      "address": "bchtest:zqpvyhmj86thnsm67mwwatm2z0f8euacssssk8y69a",
+      "earned": "106898",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "bff72f525d5a136368dd74eecbab61df89570f14",
+      "address": "bchtest:zzvk60gu22y40y9t2hntxwsqxe9urydjavwug42dx3",
+      "earned": "48941",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "c0386f21d90ec3c57a658bb1fbd9e6d8e1f3aa32",
+      "address": "bchtest:zpm9ntrrr564q6aknlz02z4dgz4stngsnqqz7v5y8m",
+      "earned": "68972",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "c1562b8816370a967e09618e49902eba9cd97852",
+      "address": "bchtest:zpphp9tmvq95azm5dsya6tmvvrfz53e2k5uzc208ty",
+      "earned": "31442",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "c17904748d29e1a150c1b783f6c4bfba1f8e424f",
+      "address": "bchtest:zqemvrj52pgjk8qat3053lyc9z4aqn90wyccqjmx27",
+      "earned": "169973",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "c196cce64f7ab98de1ce44875b014dad28948f95",
+      "address": "bchtest:zzwccz67m0lzerdssp0s2xt0p8l0crpnav9xph49dh",
+      "earned": "128747",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "c1c64bda3c9d0c63e0532533fc595d1c925b2bc9",
+      "address": "bchtest:zr6g8pwnvkvmejvj8360jve8yu3kvtpeg5g82mheq9",
+      "earned": "307",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "c2032e244ad549a80d7912d14ae73f54bc025799",
+      "address": "bchtest:zr88z2y24xreccv06m54g9v4pl35k9njlsh6g87snf",
+      "earned": "6892",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "c2b9e7bdbd2da011bad8d69a4383de37aa5a79f2",
+      "address": "bchtest:zzm8jgx275390tp9yly9c4dj4xnvy7zmactz4yqcfy",
+      "earned": "31830",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "c2c6901f995be2d0a2321bf5d4371b77f46e3ceb",
+      "address": "bchtest:zrzly3mjtj54vcm5e8sk0dcl20grkkc9nythddjuqf",
+      "earned": "91179",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "c32db32bf8c306e4ccb63546733f76d70235fc31",
+      "address": "bchtest:zr2we3cx9f59q9rdvmwpvvp5mlm5h09g35k58tg6u8",
+      "earned": "114502",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "c345b8696861224ae85d3be73b8f5340ec20e3da",
+      "address": "bchtest:zzdsy34j5cp49l3v7hhzvke05ufr2ql2vyvexnq7hg",
+      "earned": "101988",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "c414d694ead720536f780b0914e2988936708c3a",
+      "address": "bchtest:zqks5ywkx0gjm40299sdedd605xprlejmvyhsxfmnl",
+      "earned": "268176",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "c488697a060d2a4ce1f3c224241e5856f632b435",
+      "address": "bchtest:zrcsvxmltvtqfmudz397f8ku9gv9frswnskly8d24n",
+      "earned": "237017",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "c4ef8a68740b46a2675c728df2f795a8ab882dbd",
+      "address": "bchtest:zzgu8lftu8c36tw4sz8qh2qfc4kjxl8xmvetxyr967",
+      "earned": "6098",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "c5345d0dc8410d2549b2250230eda86a4d671373",
+      "address": "bchtest:zquz0qll3zcyewvz344k6eu47jqs5x74ectnu5gn3z",
+      "earned": "2103",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "c551d85364e30c16973cb9cb53096a9489cd0659",
+      "address": "bchtest:zrtdt9l8t0yl635avju770yldhe3pwmq4swjh8qx9e",
+      "earned": "55",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "c5e48a8eff60bad1d2a85f67d68b9cc2570c1157",
+      "address": "bchtest:zqy0j0w57ntma426yjpzjmgzv00yraw20guyxfegd6",
+      "earned": "55",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "c631ec9f0c6424f5802e0630dcd5dac151df2841",
+      "address": "bchtest:zzw5v63xycx60qdcq2g7dej39we768haq5kf62ya4c",
+      "earned": "27018",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "c6ae2259d7deb5c90a7de081675a0eae529a545a",
+      "address": "bchtest:zzcggepn6368nzu6g39dnyrezgdxxlfv7yd6jfl687",
+      "earned": "151118",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "c72262b3d8d82e138e7819e8ff649cd8b3015302",
+      "address": "bchtest:zrxmcd83t7fgntlyj86nwgj2asenxapayqvg8f3u98",
+      "earned": "188",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "c7b91515cfe6b9399bfb15806fe0b973005f844b",
+      "address": "bchtest:zrwv7efq9mazquwsc3qg8zf3appxcxdqnuqu7kywwk",
+      "earned": "7099",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "c818963cedd7ca29bfcc63bdb0f9486a2d709ce3",
+      "address": "bchtest:zzl4qheprl3890cytyxw3m5kc5mr5gj7tqxzlqnkj7",
+      "earned": "230",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "c9d3e6468f5e4b3cdf9f35a58d5e0a869f866e9d",
+      "address": "bchtest:zpspspnyk9snmvf65vsruuw3x8gyrz96xck49hxcl4",
+      "earned": "36761",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "ca442bbaae017ccde25daedf459768dccbaaef7f",
+      "address": "bchtest:zrn7glgc62qsjw2ywaqx9n9h5w27nk67pstxc5uawd",
+      "earned": "986",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "cb1a8b38014552746543ad4f8558bf7d701ac55a",
+      "address": "bchtest:zzcnkgcye0jtlw8ansr8p076gsjg2sfkuc4pqyp0r7",
+      "earned": "144460",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "cb1f0eb0cd4702c23dabe5dde096a271769d9d5c",
+      "address": "bchtest:zzwd8xtf3em67skkkgz3y53w23ck6k0geg87ezczu9",
+      "earned": "1898",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "cb4fa3b6db6cd9b70f6f8f1564da4cfbc2b3fe97",
+      "address": "bchtest:zqs7nl2hgqrzg7y7j3y82waf0dm8m23gtv7hcezv7a",
+      "earned": "78084",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "cf8aaca31f732ec4d9b38d4936630e47aad7f430",
+      "address": "bchtest:zqzqetusyd8qexuj6seznvgjthns9s9uggcste4x6d",
+      "earned": "29993",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "d0339586c0efeb17d1a87d252b4c65b486d493c2",
+      "address": "bchtest:zqjdekxgv3l0e22uv44dpdn2aeqnwmezdcx97wm4ka",
+      "earned": "189452",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "d15cb13c4b799b9d5410172bd5c0ebdb9af8ae0b",
+      "address": "bchtest:zrvsp95e95ffd5napk8qx2tzsfye8pgm6ctn6pgxlg",
+      "earned": "80931",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "d19f00d9fc6ad5e8d76883ae65b690f13ccc321e",
+      "address": "bchtest:zpxmaucapmj2su4q92veprfxxz4j07rcdqzgtja2xe",
+      "earned": "2518",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "d1fd844a7fa4c0acd80ad5b4253697572ceb708d",
+      "address": "bchtest:zzufh8jr3fjcc3m6xeeas44ee2lk6cr96vwa3cl9mv",
+      "earned": "288",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "d204c704b1ff690cd4c956d9514231abff06c92a",
+      "address": "bchtest:zrmlltwhvqtrdrzpfhsqyw7cnefrffus2vk40pq7ww",
+      "earned": "27308",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "d61730deb95aad0be08b8df161ecf071903cb297",
+      "address": "bchtest:zpv6kl8nlu2llap5az7lyzxh7223a68t2v0m7ppy7d",
+      "earned": "149",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "d7bd964a245607482771f0cb27a0f845dde82b85",
+      "address": "bchtest:zqn5qkzh25hzptg5w4hz6n882vx2p8ajyvcr2r5njp",
+      "earned": "5395",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "d8a2c9619e0eb373ddf144cb7c0a12342533b048",
+      "address": "bchtest:zpnc9nkmpsn5td3hzdprg9d424d2fms0rglqw5dp28",
+      "earned": "253647",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "d8f4b5ee30d6b2dc99de12f9a1151571fb1ce894",
+      "address": "bchtest:zz0m5mvmdw0yrw8xaw2rd3vd0u88racnl5jmh64p73",
+      "earned": "78784",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "d98b7f1771db672f4ee9e161b8fc178c809d1022",
+      "address": "bchtest:zr4mx6ssyf86ksw4e9s42q66m3aqkrucms3ec88cyn",
+      "earned": "44494",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "d9adff137a28b934e110586623ae5fe5537f9100",
+      "address": "bchtest:zqpm73c40ndr3ygucfh9e3yfl342528els6ru6djxl",
+      "earned": "95566",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "da347cc66860324369e068e9a55b6f8d3144eb44",
+      "address": "bchtest:zr702e2umcu4c4rde8xpya5859ge2t34eq36yqxz0q",
+      "earned": "110147",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "da581c1432c29c9e3262ac81af38bb51ca7cff67",
+      "address": "bchtest:zrga4u7legdvvt6uuew5ve408y0afhhshsm8dcmfzr",
+      "earned": "9617",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "db62cde1eeb2777207ecc4a72cd3d995ffa9d2f1",
+      "address": "bchtest:zptn45cg7xgxvnzsmwgdqv34cau2ggx6jqldl85cwf",
+      "earned": "176455",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "dbc5dbd4802bacf090064a61b5d28b68d2621c46",
+      "address": "bchtest:zzg0r528jgp0h5aywgv6yzgs0760vedj9qltdj0nrd",
+      "earned": "198724",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "dc1f01d8ff39ddb23c4508c4c5c6cfb079da66aa",
+      "address": "bchtest:zqyshh76gjtrf6zydzr6gsnzzwm9lq79qqy8asjdg7",
+      "earned": "103326",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "dcc4742f3c1d0f16218c63dc49e897693de414ee",
+      "address": "bchtest:zrnf7cc0dusmj26g4u0frp5sssrp0nuunslq653ceg",
+      "earned": "1160",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "dd8429ca69fbd69f985ad2c26a7eb0d71c26b321",
+      "address": "bchtest:zpuspx5vrhvy86mj9nkht8l8w67exsx08vaxrtjugw",
+      "earned": "32440",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "ddc26e65a676d863bcad78bdf6e6b02cc760815a",
+      "address": "bchtest:zpk5keuh20sv86wgp43rzpdx4htwetjh3g6s8ng4tg",
+      "earned": "61",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "de8c94daa48f0a74259ec81a5b70077045038cee",
+      "address": "bchtest:zzrrmft8m0qwvwf7plaau0wz5xfzymgh2qlth36u9n",
+      "earned": "4053",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "e00d411c47c5e79ee2e18ec02e84caffbd1dec75",
+      "address": "bchtest:zpaq5qhlxy73cwu338pxyk20vxu6tehq8vw3au2vu0",
+      "earned": "2269",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "e3cf91b9019308bfe8c0c9ea962be256417d4b17",
+      "address": "bchtest:zrxu38p5csxksz7eu724wntggqzee74vnq3f5ftnx3",
+      "earned": "25520",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "e429a063472372c670a13a806c9213b8b97e5128",
+      "address": "bchtest:zqfcydf9m2taejtmusv8cr873d76wagl2srus7xjxg",
+      "earned": "1126",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "e500e98f1a9241b21c09ee4a45ccb94416136b9f",
+      "address": "bchtest:zpkwppfn2r39j8s0f7hu6xcwxqmzr502kgx4dz336g",
+      "earned": "211216",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "e505bf64145017faa195fe1c4b688e8ec9055062",
+      "address": "bchtest:zze5ltaeqytv7tjtetvx66fe8x7qkqexlu8lx3a0dj",
+      "earned": "84369",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "e6115736f149a04ebcdc7bb98307f6de06f63587",
+      "address": "bchtest:zpul7mw2s6huyzl2hfhhyvpeqet8hnp0wvfhsjsrdf",
+      "earned": "17214",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "e62720a38cee87bfe98a51ed94c61def666c5e20",
+      "address": "bchtest:zr8ewzwmlvnzq36yqksjjdvq4gq0f8y4hvta477umq",
+      "earned": "18777",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "e698859d9483d3fec576f1d7cdb6c407b1706c36",
+      "address": "bchtest:zzcj20hlnvrps7p2x2ayjeg66stq6ycapqmqflav2k",
+      "earned": "176773",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "e7231dcd1e43636f32f9737d50e6dafdcb1595ff",
+      "address": "bchtest:zq0y86t6v9wwakuwrs6adzajv7wgan97pvv2kaws56",
+      "earned": "8158",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "e7fc6014f1c3bc37f7680896724adda3d6413e00",
+      "address": "bchtest:zp9r02yewhccghdzql3y8qpt7gsenr3g2crc9vw8p7",
+      "earned": "109",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "e82470d532449306d84ae57279e73ede751928fd",
+      "address": "bchtest:zpr3x75tl84w8lsqu5tlt8l4sw2cq6hzx5cf0a3fmk",
+      "earned": "11058",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "e835aed42da5ef4ee7d2967da291c36e8f0eaee4",
+      "address": "bchtest:zp464w58dh0wa77rq8ptz43q7d42glhkmq022c3mh2",
+      "earned": "69043",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "e8d979e4600317afcc93012a6e964becd0af442a",
+      "address": "bchtest:zzvxh86nc5l57usuz2pzmphg42luagt3tqcs93642l",
+      "earned": "53119",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "e909eb8c52d60b9676dead1319295686f68034fa",
+      "address": "bchtest:zpzam3sp34keqq0xrpqcrhl66pjrl96f8ch6sadv5u",
+      "earned": "62",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "eac4253c87d74972dc0f9be166b7b2514c90f37f",
+      "address": "bchtest:zztdty96n3t7vqq3n2td00ew2mvxr5jllvdg395f2n",
+      "earned": "161758",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "ec2f137dcbcbb86e9198772b23ef0104007bd23e",
+      "address": "bchtest:zryhxp380z2248f4hs59zra3prvyxl6veqd0hqg3tu",
+      "earned": "19920",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "ed1be862f0278652e2430e4db17108879494b378",
+      "address": "bchtest:zzt8wrchp2mf0s2v5s9reazrje4grzgmxywed2dme7",
+      "earned": "150249",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "ed32b467985b6b3c1811cfc1d8258e8e1affbc66",
+      "address": "bchtest:zpugfxk2c5eqvphj7sn8s9ca2309nk8fju9lkn7tw2",
+      "earned": "2327",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "f102fa242aa5160ed3f86b545c7dcd8c0b576cd0",
+      "address": "bchtest:zqfgrwsq0qu4yapqmtzfrythcv4sqyekcqzur4crzm",
+      "earned": "19987",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "f15316874a522489604f37ba78e7192e27736a03",
+      "address": "bchtest:zrncuyn6nsjhq826e2qxtsvq3vlshwj505z4qljyqz",
+      "earned": "685",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "f20295cf70bb8f0ba98e3852b637fde3ba077697",
+      "address": "bchtest:zz2l8mc4fyv2pzqaz8gc52n7j7xcugakdys08alc7z",
+      "earned": "56437",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "f2a5919ae894fda0a8b89873c11700749e145a2c",
+      "address": "bchtest:zql2y89k2ycghd7ymz9qs8spmr8c2595avdp0yyzus",
+      "earned": "66074",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "f2a70553d14e7cb81b7dd5f7de4b1cbe58434684",
+      "address": "bchtest:zpdy8xxy4u83504taxl8y4memv3c6l58z5hu64rsya",
+      "earned": "83612",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "f3a5cddad9e7d64e639dd2ca4ce02a24d924041c",
+      "address": "bchtest:zp0uhzlw7vk4kr2l6vnefp3vmu82l2ac959v6kzky3",
+      "earned": "165",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "f3fc08797f1bbe36ac55ce5b3023fa7fae334b42",
+      "address": "bchtest:zrfknjmpahvjvc8ckneznxgdrh20t60xnvrft8970f",
+      "earned": "138497",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "f5ac040aa88debbb72736ffdf8324f8cda034ae4",
+      "address": "bchtest:zq3tkfc2g7025hjsjl5kmsr2qsg3w8uz753tkqn8fl",
+      "earned": "232",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "f5b7dca0d8b74896e109a0a3b000e3350cea9a7f",
+      "address": "bchtest:zrpqrmajzlfmmchxycveq7esu53z72z7eur3da3wqd",
+      "earned": "13192",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "f645ecb8e994a00f46df50b6d9ddfcb51e78f5ee",
+      "address": "bchtest:zp03z77nuklc745675j5h8qa9hkrmqmp2cdmtsjh4y",
+      "earned": "4024",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "f6be54c42efc21586d25def10ac45ad3b5c64522",
+      "address": "bchtest:zqhx4qdfc5vz8kc8s2cz5saw69hfdyln8qm7jqw8pw",
+      "earned": "24230",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "f6c4d982016546d0ce3d7ce0cad97db3ef447583",
+      "address": "bchtest:zpjggywfewfcrq0p9x0l0mp50k02qrxv4uncajvwlw",
+      "earned": "9883",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "f789c2b289f21d8615860b22e70ee1096359c55a",
+      "address": "bchtest:zqn8daw2wla4xx6e8jak227snaczz6see5y3ff0gnq",
+      "earned": "76008",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "f92c770234c1d5c2f596c92128ac0110d81aadc0",
+      "address": "bchtest:zz7g6ywqpmk6ttn0e7fxkmrnfn4e6r9jfuycmzrxa3",
+      "earned": "99440",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "f9ae958d5c4ca1a31162dc60b4235a8d26718ad5",
+      "address": "bchtest:zz99nzc9ket9qllm3mxjhse6eyf6fu9e6vphzy2xfa",
+      "earned": "203981",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "fc06c10046288ab74f44d4456291f5f2b56c3c6a",
+      "address": "bchtest:zp9m37a6yhu7a4jzs0gax7s6eqjerf6j9u4s73wm3d",
+      "earned": "166516",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "fd3887b51d765a58cb643dd7a440fc780cd83997",
+      "address": "bchtest:zrnazrwye9a6a7kk6us9cxe8uxnc3jl7h53vm7ph9v",
+      "earned": "148002",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "fe114df52c0653e2775a0ce1dca63cd9aa4f04db",
+      "address": "bchtest:zzrljtx2wgxsm0kd249cf7hfq39pt4w63g0rersc4u",
+      "earned": "66",
+      "claimed": "0"
+    },
+    {
+      "addrHash": "fedf23a18c9b49bec69c7e17297ed1fd9dc40679",
+      "address": "bchtest:zz763xhl5fqhfvfv6gejyjuspd3tdntwkspvuvv9u7",
+      "earned": "8556",
+      "claimed": "0"
+    }
+  ]
+}

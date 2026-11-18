@@ -1,0 +1,17 @@
+{
+  "network": "chipnet",
+  "createdAt": "2026-11-18T19:14:21.068Z",
+  "rewardCategory": "7ce27f71745efcb5627a7ce054368e7f8adf92a38314f3bfc9b831c1c0a43e5f",
+  "receiptCategory": "583189b036530cf05e5cf15bd1be7add4a0055c20fa4cdeb0f022fdb42384e97",
+  "operatorAddress": "bchtest:zq8elqpcw2mgqxh4vz64y4wyjvvfrkl4vul00jen2r",
+  "operatorIndex": 0,
+  "auditDelay": 2,
+  "depth": 9,
+  "contractAddress": "bchtest:pdxtzth4sqfkkt9pr6gkctaz5xatgwwlt5utge2jgkyhjp9nw3spcwhq6uax2",
+  "contractTokenAddress": "bchtest:rdxtzth4sqfkkt9pr6gkctaz5xatgwwlt5utge2jgkyhjp9nw3spcuyum9ulp",
+  "genesisTxs": {
+    "reward": "5e8c12db8aea53ed81e644f72a11fe2e390f9271a78be948126a375a5fa3492e",
+    "receipt": "4390beeecf120ecc5b3a70ce850ed1e63f74a0b258be1d6b4f0e30e271d08a39"
+  },
+  "poolFundingTx": "57bcc06da87be96eab1d3489aad476afd3b59639298e723a4b9dc97fde937b4d"
+}
