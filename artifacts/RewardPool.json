@@ -1,0 +1,690 @@
+{
+  "contractName": "RewardPool",
+  "constructorInputs": [
+    {
+      "name": "rewardCategory",
+      "type": "bytes32"
+    },
+    {
+      "name": "receiptCategory",
+      "type": "bytes32"
+    },
+    {
+      "name": "operator",
+      "type": "pubkey"
+    },
+    {
+      "name": "auditDelay",
+      "type": "int"
+    }
+  ],
+  "abi": [
+    {
+      "name": "claim",
+      "inputs": [
+        {
+          "name": "addrHash",
+          "type": "bytes20"
+        },
+        {
+          "name": "earned",
+          "type": "int"
+        },
+        {
+          "name": "claimed",
+          "type": "int"
+        },
+        {
+          "name": "proof",
+          "type": "bytes"
+        },
+        {
+          "name": "path",
+          "type": "int"
+        },
+        {
+          "name": "withReceipt",
+          "type": "bool"
+        }
+      ]
+    },
+    {
+      "name": "proposeRoot",
+      "inputs": [
+        {
+          "name": "newRoot",
+          "type": "bytes20"
+        },
+        {
+          "name": "operatorSig",
+          "type": "sig"
+        }
+      ]
+    },
+    {
+      "name": "activateRoot",
+      "inputs": [
+        {
+          "name": "operatorSig",
+          "type": "sig"
+        }
+      ]
+    },
+    {
+      "name": "cancelRoot",
+      "inputs": [
+        {
+          "name": "operatorSig",
+          "type": "sig"
+        }
+      ]
+    },
+    {
+      "name": "deposit",
+      "inputs": []
+    }
+  ],
+  "bytecode": "140000000000000000000000000000000000000000 OP_0 OP_DEFINE 0100537a7e7b58807e7c58807ea9 OP_1 OP_DEFINE 7b7b51006576599f766b63527901147f7857795579965297519c63765779517b7e7c7ea9577a757c6b7c6b7c6b7c727b6c6c6c67567978517b7e7c7ea9577a757c6b7c6b7c6b7c727b6c6c6c6878567a757c6b7c6b7c727b6c6c54795295557a757c6b7c727b6c537a8b7c727b6d75686c9166757b777777 OP_2 OP_DEFINE OP_4 OP_PICK OP_0 OP_NUMEQUAL OP_IF OP_5 OP_ROLL OP_SIZE 14 OP_EQUALVERIFY OP_10 OP_ROLL OP_0NOTEQUAL OP_ROT OP_2OVER OP_9 OP_ROLL OP_10 OP_PICK OP_12 OP_ROLL OP_13 OP_ROLL OP_1 OP_UTXOTOKENCATEGORY OP_6 OP_PICK OP_2 OP_CAT OP_EQUALVERIFY OP_1 OP_UTXOTOKENCOMMITMENT 14 OP_SPLIT OP_0 OP_INVOKE OP_EQUALVERIFY OP_0 OP_UTXOTOKENCATEGORY OP_8 OP_PICK OP_EQUALVERIFY OP_4 OP_PICK OP_4 OP_PICK OP_SUB OP_DUP OP_0 OP_GREATERTHAN OP_VERIFY OP_0 OP_UTXOTOKENAMOUNT OP_OVER OP_GREATERTHANOREQUAL OP_VERIFY OP_6 OP_PICK OP_6 OP_PICK OP_6 OP_ROLL OP_1 OP_INVOKE OP_4 OP_PICK OP_4 OP_PICK OP_2 OP_INVOKE OP_ROT OP_EQUALVERIFY OP_4 OP_PICK OP_4 OP_PICK OP_5 OP_PICK OP_1 OP_INVOKE OP_2SWAP OP_2 OP_INVOKE OP_0 OP_OUTPUTTOKENCATEGORY OP_6 OP_PICK OP_EQUALVERIFY OP_0 OP_OUTPUTTOKENAMOUNT OP_2 OP_PICK OP_NUMEQUALVERIFY OP_0 OP_OUTPUTBYTECODE OP_HASH160 OP_4 OP_PICK OP_EQUALVERIFY OP_0 OP_OUTPUTVALUE e803 OP_GREATERTHANOREQUAL OP_VERIFY OP_1 OP_OUTPUTBYTECODE OP_0 OP_UTXOBYTECODE OP_EQUALVERIFY OP_1 OP_OUTPUTTOKENCATEGORY OP_6 OP_ROLL OP_EQUALVERIFY OP_1 OP_OUTPUTTOKENAMOUNT OP_0 OP_UTXOTOKENAMOUNT OP_3 OP_ROLL OP_SUB OP_NUMEQUALVERIFY OP_1 OP_OUTPUTVALUE e803 OP_GREATERTHANOREQUAL OP_VERIFY OP_2 OP_OUTPUTBYTECODE OP_1 OP_UTXOBYTECODE OP_EQUALVERIFY OP_2 OP_OUTPUTTOKENCATEGORY OP_1 OP_UTXOTOKENCATEGORY OP_EQUALVERIFY OP_2 OP_OUTPUTTOKENCOMMITMENT OP_SWAP OP_0 OP_INVOKE OP_CAT OP_EQUALVERIFY OP_2 OP_OUTPUTVALUE e803 OP_GREATERTHANOREQUAL OP_VERIFY OP_3 OP_OUTPUTTOKENCATEGORY OP_3 OP_ROLL OP_EQUALVERIFY OP_3 OP_OUTPUTTOKENAMOUNT OP_0 OP_NUMEQUALVERIFY OP_3 OP_OUTPUTTOKENCOMMITMENT OP_ROT OP_ROT OP_8 OP_NUM2BIN OP_CAT OP_EQUALVERIFY OP_3 OP_OUTPUTVALUE e803 OP_GREATERTHANOREQUAL OP_VERIFY OP_TXOUTPUTCOUNT OP_5 OP_NUMEQUALVERIFY OP_4 OP_OUTPUTTOKENCATEGORY OP_0 OP_EQUALVERIFY OP_IF OP_2 OP_UTXOTOKENCATEGORY OP_2 OP_PICK OP_EQUALVERIFY OP_2 OP_UTXOTOKENCOMMITMENT OP_OVER OP_7 OP_PICK OP_8 OP_NUM2BIN OP_CAT OP_EQUALVERIFY OP_3 OP_OUTPUTBYTECODE OP_2 OP_UTXOBYTECODE OP_EQUALVERIFY OP_ELSE OP_5 OP_PICK OP_0 OP_NUMEQUALVERIFY OP_3 OP_OUTPUTBYTECODE OP_HASH160 OP_OVER OP_EQUALVERIFY OP_ENDIF OP_2DROP OP_2DROP OP_2DROP OP_1 OP_ELSE OP_4 OP_PICK OP_1 OP_NUMEQUAL OP_IF OP_5 OP_ROLL OP_SIZE 14 OP_EQUALVERIFY OP_INPUTINDEX OP_0 OP_NUMEQUALVERIFY OP_6 OP_ROLL OP_4 OP_ROLL OP_CHECKSIGVERIFY OP_0 OP_UTXOTOKENCATEGORY OP_3 OP_ROLL OP_2 OP_CAT OP_EQUALVERIFY OP_0 OP_UTXOTOKENCOMMITMENT 14 OP_SPLIT OP_0 OP_INVOKE OP_EQUALVERIFY OP_TXOUTPUTCOUNT OP_2 OP_NUMEQUALVERIFY OP_0 OP_OUTPUTBYTECODE OP_0 OP_UTXOBYTECODE OP_EQUALVERIFY OP_0 OP_OUTPUTTOKENCATEGORY OP_0 OP_UTXOTOKENCATEGORY OP_EQUALVERIFY OP_0 OP_OUTPUTTOKENCOMMITMENT OP_SWAP OP_ROT OP_CAT OP_EQUALVERIFY OP_0 OP_OUTPUTVALUE e803 OP_GREATERTHANOREQUAL OP_VERIFY OP_1 OP_OUTPUTTOKENCATEGORY OP_0 OP_EQUAL OP_NIP OP_NIP OP_NIP OP_ELSE OP_4 OP_PICK OP_2 OP_NUMEQUAL OP_IF OP_INPUTINDEX OP_0 OP_NUMEQUALVERIFY OP_5 OP_ROLL OP_3 OP_ROLL OP_CHECKSIGVERIFY OP_ROT OP_CHECKSEQUENCEVERIFY OP_DROP OP_0 OP_UTXOTOKENCATEGORY OP_ROT OP_2 OP_CAT OP_EQUALVERIFY OP_0 OP_UTXOTOKENCOMMITMENT 14 OP_SPLIT OP_NIP OP_DUP OP_0 OP_INVOKE OP_EQUAL OP_NOT OP_VERIFY OP_TXOUTPUTCOUNT OP_2 OP_NUMEQUALVERIFY OP_0 OP_OUTPUTBYTECODE OP_0 OP_UTXOBYTECODE OP_EQUALVERIFY OP_0 OP_OUTPUTTOKENCATEGORY OP_0 OP_UTXOTOKENCATEGORY OP_EQUALVERIFY OP_0 OP_OUTPUTTOKENCOMMITMENT OP_SWAP OP_0 OP_INVOKE OP_CAT OP_EQUALVERIFY OP_0 OP_OUTPUTVALUE e803 OP_GREATERTHANOREQUAL OP_VERIFY OP_1 OP_OUTPUTTOKENCATEGORY OP_0 OP_EQUAL OP_NIP OP_NIP OP_ELSE OP_4 OP_PICK OP_3 OP_NUMEQUAL OP_IF OP_INPUTINDEX OP_0 OP_NUMEQUALVERIFY OP_5 OP_ROLL OP_3 OP_ROLL OP_CHECKSIGVERIFY OP_0 OP_UTXOTOKENCATEGORY OP_ROT OP_2 OP_CAT OP_EQUALVERIFY OP_0 OP_UTXOTOKENCOMMITMENT 14 OP_SPLIT OP_0 OP_INVOKE OP_EQUAL OP_NOT OP_VERIFY OP_TXOUTPUTCOUNT OP_2 OP_NUMEQUALVERIFY OP_0 OP_OUTPUTBYTECODE OP_0 OP_UTXOBYTECODE OP_EQUALVERIFY OP_0 OP_OUTPUTTOKENCATEGORY OP_0 OP_UTXOTOKENCATEGORY OP_EQUALVERIFY OP_0 OP_OUTPUTTOKENCOMMITMENT OP_SWAP OP_0 OP_INVOKE OP_CAT OP_EQUALVERIFY OP_0 OP_OUTPUTVALUE e803 OP_GREATERTHANOREQUAL OP_VERIFY OP_1 OP_OUTPUTTOKENCATEGORY OP_0 OP_EQUAL OP_NIP OP_NIP OP_NIP OP_ELSE OP_4 OP_ROLL OP_4 OP_NUMEQUALVERIFY OP_INPUTINDEX OP_0 OP_NUMEQUALVERIFY OP_0 OP_UTXOTOKENCATEGORY OP_OVER OP_EQUALVERIFY OP_TXOUTPUTCOUNT OP_2 OP_NUMEQUALVERIFY OP_0 OP_OUTPUTBYTECODE OP_0 OP_UTXOBYTECODE OP_EQUALVERIFY OP_0 OP_OUTPUTTOKENCATEGORY OP_EQUALVERIFY OP_0 OP_OUTPUTTOKENAMOUNT OP_0 OP_UTXOTOKENAMOUNT OP_GREATERTHAN OP_VERIFY OP_0 OP_OUTPUTVALUE e803 OP_GREATERTHANOREQUAL OP_VERIFY OP_1 OP_OUTPUTTOKENCATEGORY OP_0 OP_EQUAL OP_NIP OP_NIP OP_NIP OP_ENDIF OP_ENDIF OP_ENDIF OP_ENDIF",
+  "source": "pragma cashscript ^0.14.0;\n\n/*\n * RewardPool — pull-based, Merkle-verified reward claims for FoldingCash.\n *\n * The pool lives at this contract address as two UTXOs:\n *   [0] the reward balance: fungible tokens of `rewardCategory` (FLDCH, or the\n *       Chipnet stand-in), and\n *   [1] the pool state: one MINTING NFT of `receiptCategory` whose 40-byte\n *       commitment is the entire on-chain state, `activeRoot(20) || pendingRoot(20)`.\n * (A BCH output can only carry one token category, so the reward tokens and the\n * state NFT necessarily live in separate outputs of the same contract.)\n *\n * The operator publishes a Merkle root over fixed-size leaves\n * `hash160(0x00 || addressHash || cumulativeEarned(8) || cumulativeClaimed(8))`.\n * A claim proves its leaf against the committed `activeRoot`, pays\n * `cumulativeEarned - cumulativeClaimed` to the address committed in the leaf,\n * rewrites that leaf to \"fully claimed\" and commits the resulting root back into\n * the state NFT. Because the root is rewritten in place, the same proof can\n * never be used twice: a replay recomputes the *old* root, which is no longer\n * the committed one.\n *\n * Root rotation is two-phase and gives watchers a hard audit window:\n *   proposeRoot  activeRoot stays committed, pendingRoot is set -> claims pause\n *   activateRoot the pending UTXO must be `auditDelay` blocks old (BIP68/CSV),\n *                then pendingRoot becomes activeRoot           -> claims resume\n *   cancelRoot   operator aborts a proposal (no delay needed)\n *\n * Node hashes are 20-byte hash160() digests (160-bit security, 20 bytes per\n * proof level instead of 32, which keeps the claim transaction small). DEPTH is\n * a compile-time constant; the tooling pads the leaf set to 2^DEPTH slots with\n * EMPTY leaves so every proof is exactly DEPTH * 20 bytes.\n */\n\nint constant DEPTH = 9;\nbytes20 constant ZERO_HASH = 0x0000000000000000000000000000000000000000;\n\nfunction nodeHash(bytes20 left, bytes20 right) returns (bytes20) {\n    return hash160(0x01 + left + right);\n}\n\nfunction leafHash(bytes20 addrHash, int earned, int claimed) returns (bytes20) {\n    return hash160(0x00 + addrHash + toPaddedBytes(earned, 8) + toPaddedBytes(claimed, 8));\n}\n\n// Recomputes the root from a leaf and its DEPTH-long sibling path.\n// Bit i of `path` is set when the current node is the RIGHT child at level i.\nfunction walk(bytes20 leaf, bytes proof, int path) returns (bytes20) {\n    bytes20 node = leaf;\n    bytes rest = proof;\n    int divisor = 1;\n    for (int i = 0; i < DEPTH; i++) {\n        bytes head, bytes tail = rest.split(20);\n        bytes20 sibling = unsafe_bytes20(head);\n        if ((path / divisor) % 2 == 1) {\n            node = nodeHash(sibling, node);\n        } else {\n            node = nodeHash(node, sibling);\n        }\n        rest = tail;\n        divisor = divisor * 2;\n    }\n    return node;\n}\n\n// Every check a claim must satisfy, shared by both claim shapes.\n//\n// Inputs : [0] reward tokens, [1] state NFT, [2] receipt NFT (withReceipt only)\n// Outputs: [0] payout, [1] reward tokens back to the pool, [2] state NFT,\n//          [3] receipt NFT, [4] claimant change (no tokens)\nfunction claimChecks(bytes32 rewardCategory, bytes32 receiptCategory, bytes20 addrHash,\n                     int earned, int claimed, bytes proof, int path) {\n    // --- pool state (input 1) ---\n    require(tx.inputs[1].tokenCategory == receiptCategory + 0x02, \"input 1 must be the minting state NFT\");\n    bytes activeBytes, bytes pendingBytes = tx.inputs[1].nftCommitment.split(20);\n    require(unsafe_bytes20(pendingBytes) == ZERO_HASH, \"root rotation pending: claims paused\");\n    bytes20 activeRoot = unsafe_bytes20(activeBytes);\n    require(tx.inputs[0].tokenCategory == rewardCategory, \"input 0 must hold reward tokens\");\n\n    int payout = earned - claimed;\n    require(payout > 0, \"nothing left to claim\");\n    require(tx.inputs[0].tokenAmount >= payout, \"pool balance too low\");\n\n    // --- Merkle proof: old leaf -> committed root, new leaf -> next root ---\n    require(walk(leafHash(addrHash, earned, claimed), proof, path) == activeRoot, \"proof does not match active root\");\n    bytes20 newRoot = walk(leafHash(addrHash, earned, earned), proof, path);\n\n    // --- output 0: the payout, to the address committed in the leaf ---\n    require(tx.outputs[0].tokenCategory == rewardCategory, \"payout output must carry reward tokens only\");\n    require(tx.outputs[0].tokenAmount == payout, \"payout amount mismatch\");\n    require(hash160(tx.outputs[0].lockingBytecode) == addrHash, \"payout must go to the leaf address\");\n    require(tx.outputs[0].value >= 1000, \"claimant must fund the payout dust\");\n\n    // --- output 1: reward balance back to this contract, reduced by the payout ---\n    require(tx.outputs[1].lockingBytecode == tx.inputs[0].lockingBytecode, \"reward balance must stay at this address\");\n    require(tx.outputs[1].tokenCategory == rewardCategory, \"reward output must carry reward tokens only\");\n    require(tx.outputs[1].tokenAmount == tx.inputs[0].tokenAmount - payout, \"reward balance must drop by payout\");\n    require(tx.outputs[1].value >= 1000, \"reward output needs dust\");\n\n    // --- output 2: state NFT back to this contract with the rewritten root ---\n    require(tx.outputs[2].lockingBytecode == tx.inputs[1].lockingBytecode, \"state NFT must stay at this address\");\n    require(tx.outputs[2].tokenCategory == tx.inputs[1].tokenCategory, \"state NFT must be preserved\");\n    require(tx.outputs[2].nftCommitment == newRoot + ZERO_HASH, \"pool root not updated\");\n    require(tx.outputs[2].value >= 1000, \"state output needs dust\");\n\n    // --- output 3: the receipt NFT, commitment = addrHash || cumulative claimed ---\n    require(tx.outputs[3].tokenCategory == receiptCategory, \"receipt must be an immutable NFT of receiptCategory\");\n    require(tx.outputs[3].tokenAmount == 0, \"receipt must not carry fungible tokens\");\n    require(tx.outputs[3].nftCommitment == addrHash + toPaddedBytes(earned, 8), \"receipt commitment mismatch\");\n    require(tx.outputs[3].value >= 1000, \"claimant must fund the receipt dust\");\n\n    // --- output 4: claimant change, no tokens ---\n    require(tx.outputs.length == 5, \"claim must have exactly 5 outputs\");\n    require(tx.outputs[4].tokenCategory == 0x, \"change output must not carry tokens\");\n}\n\ncontract RewardPool(\n    bytes32 rewardCategory,     // FLDCH (or Chipnet stand-in) token category, unreversed\n    bytes32 receiptCategory,    // NFT category of the pool state NFT / receipt minting NFT\n    pubkey operator,            // publishes and activates reward roots\n    int auditDelay              // blocks a proposed root must age before it can be activated\n) {\n    // ------------------------------------------------------------------ claims\n    //\n    // withReceipt == false: first claim for this leaf. `claimed` must be 0 inside\n    //   the leaf, and the receipt NFT is minted straight to the claimant.\n    // withReceipt == true: the caller hands their receipt NFT back (it is burned\n    //   and re-minted with the new cumulative total at the same address). This is\n    //   also the delegated / operator-push path: the receipt may live at a\n    //   delegation contract instead of a plain P2PKH address.\n    //\n    // Both pool inputs (reward balance + state NFT) are spent in the same\n    // transaction and are locked by this same script, so both of them run this\n    // function. Every check inside is about the transaction as a whole, which is\n    // what makes the two-input pool atomic: neither UTXO can leave without the\n    // other, and both must appear at the fixed input/output indices below.\n    function claim(bytes20 addrHash, int earned, int claimed, bytes proof, int path, bool withReceipt) {\n        claimChecks(rewardCategory, receiptCategory, addrHash, earned, claimed, proof, path);\n\n        if (withReceipt) {\n            require(tx.inputs[2].tokenCategory == receiptCategory, \"input 2 must be a receipt NFT\");\n            require(tx.inputs[2].nftCommitment == addrHash + toPaddedBytes(claimed, 8), \"receipt does not match claimed total\");\n            require(tx.outputs[3].lockingBytecode == tx.inputs[2].lockingBytecode, \"receipt must return to its holder\");\n        } else {\n            require(claimed == 0, \"a receipt is required after the first claim\");\n            require(hash160(tx.outputs[3].lockingBytecode) == addrHash, \"receipt must pay the claimant\");\n        }\n    }\n\n    // ---------------------------------------------------------- root rotation\n    //\n    // Rotation only touches the state NFT UTXO, so it never moves reward tokens\n    // and stays cheap (~250 bytes) no matter how many users are in the tree.\n\n    // Phase 1: publish a new root. Claims pause here, because a claim rewrites\n    // the state NFT and would reset the audit clock between proposal and\n    // activation.\n    function proposeRoot(bytes20 newRoot, sig operatorSig) {\n        require(this.activeInputIndex == 0, \"state input must be index 0\");\n        require(checkSig(operatorSig, operator), \"operator signature required\");\n        require(tx.inputs[0].tokenCategory == receiptCategory + 0x02, \"input 0 must be the minting state NFT\");\n        bytes activeBytes, bytes pendingBytes = tx.inputs[0].nftCommitment.split(20);\n        require(unsafe_bytes20(pendingBytes) == ZERO_HASH, \"a rotation is already in flight\");\n        require(tx.outputs.length == 2, \"proposeRoot has exactly 2 outputs\");\n        require(tx.outputs[0].lockingBytecode == tx.inputs[0].lockingBytecode, \"state NFT must stay at this address\");\n        require(tx.outputs[0].tokenCategory == tx.inputs[0].tokenCategory, \"state NFT must be preserved\");\n        require(tx.outputs[0].nftCommitment == activeBytes + newRoot, \"pending root not committed\");\n        require(tx.outputs[0].value >= 1000, \"state output needs dust\");\n        require(tx.outputs[1].tokenCategory == 0x, \"change output must not carry tokens\");\n    }\n\n    // Phase 2: activate, but only once the proposal UTXO itself is `auditDelay`\n    // blocks old. this.age is a BIP68 relative locktime on this exact UTXO, so\n    // nobody can shortcut it, and nothing else can spend the pending UTXO.\n    function activateRoot(sig operatorSig) {\n        require(this.activeInputIndex == 0, \"state input must be index 0\");\n        require(checkSig(operatorSig, operator), \"operator signature required\");\n        require(this.age >= auditDelay, \"audit window has not elapsed\");\n        require(tx.inputs[0].tokenCategory == receiptCategory + 0x02, \"input 0 must be the minting state NFT\");\n        bytes unused activeBytes, bytes pendingBytes = tx.inputs[0].nftCommitment.split(20);\n        require(unsafe_bytes20(pendingBytes) != ZERO_HASH, \"no rotation in flight\");\n        require(tx.outputs.length == 2, \"activateRoot has exactly 2 outputs\");\n        require(tx.outputs[0].lockingBytecode == tx.inputs[0].lockingBytecode, \"state NFT must stay at this address\");\n        require(tx.outputs[0].tokenCategory == tx.inputs[0].tokenCategory, \"state NFT must be preserved\");\n        require(tx.outputs[0].nftCommitment == pendingBytes + ZERO_HASH, \"active root not updated\");\n        require(tx.outputs[0].value >= 1000, \"state output needs dust\");\n        require(tx.outputs[1].tokenCategory == 0x, \"change output must not carry tokens\");\n    }\n\n    // Abort a proposal and restore the previous root. Un-delayed on purpose:\n    // cancelling can only bring back a root that was already live.\n    function cancelRoot(sig operatorSig) {\n        require(this.activeInputIndex == 0, \"state input must be index 0\");\n        require(checkSig(operatorSig, operator), \"operator signature required\");\n        require(tx.inputs[0].tokenCategory == receiptCategory + 0x02, \"input 0 must be the minting state NFT\");\n        bytes activeBytes, bytes pendingBytes = tx.inputs[0].nftCommitment.split(20);\n        require(unsafe_bytes20(pendingBytes) != ZERO_HASH, \"no rotation in flight\");\n        require(tx.outputs.length == 2, \"cancelRoot has exactly 2 outputs\");\n        require(tx.outputs[0].lockingBytecode == tx.inputs[0].lockingBytecode, \"state NFT must stay at this address\");\n        require(tx.outputs[0].tokenCategory == tx.inputs[0].tokenCategory, \"state NFT must be preserved\");\n        require(tx.outputs[0].nftCommitment == activeBytes + ZERO_HASH, \"pending root not cleared\");\n        require(tx.outputs[0].value >= 1000, \"state output needs dust\");\n        require(tx.outputs[1].tokenCategory == 0x, \"change output must not carry tokens\");\n    }\n\n    // Top up the reward balance. Permissionless (anyone may donate) and it never\n    // touches the state NFT, so it cannot reset an audit clock.\n    function deposit() {\n        require(this.activeInputIndex == 0, \"reward input must be index 0\");\n        require(tx.inputs[0].tokenCategory == rewardCategory, \"input 0 must hold reward tokens\");\n        require(tx.outputs.length == 2, \"deposit has exactly 2 outputs\");\n        require(tx.outputs[0].lockingBytecode == tx.inputs[0].lockingBytecode, \"reward balance must stay at this address\");\n        require(tx.outputs[0].tokenCategory == rewardCategory, \"reward output must carry reward tokens only\");\n        require(tx.outputs[0].tokenAmount > tx.inputs[0].tokenAmount, \"deposit must increase the pool\");\n        require(tx.outputs[0].value >= 1000, \"reward output needs dust\");\n        require(tx.outputs[1].tokenCategory == 0x, \"change output must not carry tokens\");\n    }\n}\n",
+  "fingerprint": "50ad81ce5e9bc5e92142d6f61781839ddba82d31ddf06a1d90d75ad8df14f09c",
+  "debug": {
+    "bytecode": "1514000000000000000000000000000000000000000000890e0100537a7e7b58807e7c58807ea951894c787b7b51006576599f766b63527901147f7857795579965297519c63765779517b7e7c7ea9577a757c6b7c6b7c6b7c727b6c6c6c67567978517b7e7c7ea9577a757c6b7c6b7c6b7c727b6c6c6c6878567a757c6b7c6b7c727b6c6c54795295557a757c6b7c727b6c537a8b7c727b6d75686c9166757b77777752895479009c63557a820114885a7a927b70597a5a795c7a5d7a51ce5679527e8851cf01147f008a8800ce58798854795479947600a06900d078a26956795679567a518a54795479528a7b88547954795579518a72528a00d156798800d352799d00cda954798800cc02e803a26951cd00c78851d1567a8851d300d0537a949d51cc02e803a26952cd51c78852d151ce8852d27c008a7e8852cc02e803a26953d1537a8853d3009d53d27b7b58807e8853cc02e803a269c4559d54d100886352ce52798852cf78577958807e8853cd52c788675579009d53cda97888686d6d6d51675479519c63557a82011488c0009d567a547aad00ce537a527e8800cf01147f008a88c4529d00cd00c78800d100ce8800d27c7b7e8800cc02e803a26951d10087777777675479529c63c0009d557a537aad7bb27500ce7b527e8800cf01147f7776008a879169c4529d00cd00c78800d100ce8800d27c008a7e8800cc02e803a26951d100877777675479539c63c0009d557a537aad00ce7b527e8800cf01147f008a879169c4529d00cd00c78800d100ce8800d27c008a7e8800cc02e803a26951d1008777777767547a549dc0009d00ce7888c4529d00cd00c78800d18800d300d0a06900cc02e803a26951d1008777777768686868",
+    "sourceMap": "36::36:72;;::::1;42::44:1:0;;::::1;48::64::0;;::::1;137:4:148:5:0;;;;;:19:137:35;;;;;:85::101;;;138:20:138:34;:36::61;:63::69;;:71::78;;:80::85;;:87::91;;:8::92:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;140:25:144:9:0;141:30:141:31;:20::46:1;:50::65:0;;:12::100:1;142:30:142:31:0;:20::46:1;:50::58:0;:75::82;;:84::85;:61::86:1;:50;:12::128;143:31:143:32:0;:20::49:1;:63::64:0;:53::81:1;:12::120;144:15:147:9:0;145:20:145:27;;:31::32;:12::81:1;146:39:146:40:0;:28::57:1;:20::58;:62::70:0;:12::105:1;144:15:147:9;137:103:148:5;;;;:4;158::170::0;;;;;:25:158:40;;;;;159:16:159:37;:41::42;:8::75:1;160:25:160:36:0;;:38::46;;:8::80:1;161:26:161:27:0;:16::42:1;:46::61:0;;:64::68;:46:::1;:8::111;162:58:162:59:0;:48::74:1;:81::83:0;:48::84:1;163::163:57;;:8::94;164:16:164:33:0;:37::38;:8::77:1;165:27:165:28:0;:16::45:1;:59::60:0;:49::77:1;:8::118;166:27:166:28:0;:16::43:1;:57::58:0;:47::73:1;:8::106;167:27:167:28:0;:16::43:1;:47::58:0;:61::68;:47:::1;:8::100;168:27:168:28:0;:16::35:1;:39::43:0;:16:::1;:8::72;169:27:169:28:0;:16::43:1;:47::49:0;:8::90:1;158:59:170:5;;;:4;175::188::0;;;;;176:16:176:37;:41::42;:8::75:1;177:25:177:36:0;;:38::46;;:8::80:1;178:28:178:38:0;:8::72:1;;179:26:179:27:0;:16::42:1;:46::61:0;:64::68;:46:::1;:8::111;180:65:180:66:0;:55::81:1;:88::90:0;:55::91:1;:8::92;181:31:181:43:0;:48::57:1;;:16;;:8::84;182:16:182:33:0;:37::38;:8::78:1;183:27:183:28:0;:16::45:1;:59::60:0;:49::77:1;:8::118;184:27:184:28:0;:16::43:1;:57::58:0;:47::73:1;:8::106;185:27:185:28:0;:16::43:1;:47::59:0;:62::71:1;;:47;:8::100;186:27:186:28:0;:16::35:1;:39::43:0;:16:::1;:8::72;187:27:187:28:0;:16::43:1;:47::49:0;:8::90:1;175:43:188:5;;:4;192::204::0;;;;;193:16:193:37;:41::42;:8::75:1;194:25:194:36:0;;:38::46;;:8::80:1;195:26:195:27:0;:16::42:1;:46::61:0;:64::68;:46:::1;:8::111;196:58:196:59:0;:48::74:1;:81::83:0;:48::84:1;197::197:57;;:16;;:8::84;198:16:198:33:0;:37::38;:8::76:1;199:27:199:28:0;:16::45:1;:59::60:0;:49::77:1;:8::118;200:27:200:28:0;:16::43:1;:57::58:0;:47::73:1;:8::106;201:27:201:28:0;:16::43:1;:47::58:0;:61::70:1;;:47;:8::100;202:27:202:28:0;:16::35:1;:39::43:0;:16:::1;:8::72;203:27:203:28:0;:16::43:1;:47::49:0;:8::90:1;192:41:204:5;;;:4;208::217::0;;;;209:16:209:37;:41::42;:8::76:1;210:26:210:27:0;:16::42:1;:46::60:0;:8::97:1;211:16:211:33:0;:37::38;:8::73:1;212:27:212:28:0;:16::45:1;:59::60:0;:49::77:1;:8::123;213:27:213:28:0;:16::43:1;:8::110;214:27:214:28:0;:16::41:1;:54::55:0;:44::68:1;:16;:8::104;215:27:215:28:0;:16::35:1;:39::43:0;:16:::1;:8::73;216:27:216:28:0;:16::43:1;:47::49:0;:8::90:1;208:23:217:5;;;117:0:218:1;;;",
+    "logs": [],
+    "requires": [
+      {
+        "ip": 42,
+        "line": 138,
+        "message": "input 1 must be the minting state NFT"
+      },
+      {
+        "ip": 49,
+        "line": 138,
+        "message": "root rotation pending: claims paused"
+      },
+      {
+        "ip": 54,
+        "line": 138,
+        "message": "input 0 must hold reward tokens"
+      },
+      {
+        "ip": 63,
+        "line": 138,
+        "message": "nothing left to claim"
+      },
+      {
+        "ip": 68,
+        "line": 138,
+        "message": "pool balance too low"
+      },
+      {
+        "ip": 84,
+        "line": 138,
+        "message": "proof does not match active root"
+      },
+      {
+        "ip": 100,
+        "line": 138,
+        "message": "payout output must carry reward tokens only"
+      },
+      {
+        "ip": 105,
+        "line": 138,
+        "message": "payout amount mismatch"
+      },
+      {
+        "ip": 111,
+        "line": 138,
+        "message": "payout must go to the leaf address"
+      },
+      {
+        "ip": 116,
+        "line": 138,
+        "message": "claimant must fund the payout dust"
+      },
+      {
+        "ip": 121,
+        "line": 138,
+        "message": "reward balance must stay at this address"
+      },
+      {
+        "ip": 126,
+        "line": 138,
+        "message": "reward output must carry reward tokens only"
+      },
+      {
+        "ip": 134,
+        "line": 138,
+        "message": "reward balance must drop by payout"
+      },
+      {
+        "ip": 139,
+        "line": 138,
+        "message": "reward output needs dust"
+      },
+      {
+        "ip": 144,
+        "line": 138,
+        "message": "state NFT must stay at this address"
+      },
+      {
+        "ip": 149,
+        "line": 138,
+        "message": "state NFT must be preserved"
+      },
+      {
+        "ip": 156,
+        "line": 138,
+        "message": "pool root not updated"
+      },
+      {
+        "ip": 161,
+        "line": 138,
+        "message": "state output needs dust"
+      },
+      {
+        "ip": 166,
+        "line": 138,
+        "message": "receipt must be an immutable NFT of receiptCategory"
+      },
+      {
+        "ip": 170,
+        "line": 138,
+        "message": "receipt must not carry fungible tokens"
+      },
+      {
+        "ip": 178,
+        "line": 138,
+        "message": "receipt commitment mismatch"
+      },
+      {
+        "ip": 183,
+        "line": 138,
+        "message": "claimant must fund the receipt dust"
+      },
+      {
+        "ip": 186,
+        "line": 138,
+        "message": "claim must have exactly 5 outputs"
+      },
+      {
+        "ip": 190,
+        "line": 138,
+        "message": "change output must not carry tokens"
+      },
+      {
+        "ip": 196,
+        "line": 141,
+        "message": "input 2 must be a receipt NFT"
+      },
+      {
+        "ip": 205,
+        "line": 142,
+        "message": "receipt does not match claimed total"
+      },
+      {
+        "ip": 210,
+        "line": 143,
+        "message": "receipt must return to its holder"
+      },
+      {
+        "ip": 215,
+        "line": 145,
+        "message": "a receipt is required after the first claim"
+      },
+      {
+        "ip": 220,
+        "line": 146,
+        "message": "receipt must pay the claimant"
+      },
+      {
+        "ip": 239,
+        "line": 159,
+        "message": "state input must be index 0"
+      },
+      {
+        "ip": 244,
+        "line": 160,
+        "message": "operator signature required"
+      },
+      {
+        "ip": 251,
+        "line": 161,
+        "message": "input 0 must be the minting state NFT"
+      },
+      {
+        "ip": 258,
+        "line": 163,
+        "message": "a rotation is already in flight"
+      },
+      {
+        "ip": 261,
+        "line": 164,
+        "message": "proposeRoot has exactly 2 outputs"
+      },
+      {
+        "ip": 266,
+        "line": 165,
+        "message": "state NFT must stay at this address"
+      },
+      {
+        "ip": 271,
+        "line": 166,
+        "message": "state NFT must be preserved"
+      },
+      {
+        "ip": 277,
+        "line": 167,
+        "message": "pending root not committed"
+      },
+      {
+        "ip": 282,
+        "line": 168,
+        "message": "state output needs dust"
+      },
+      {
+        "ip": 287,
+        "line": 169,
+        "message": "change output must not carry tokens"
+      },
+      {
+        "ip": 298,
+        "line": 176,
+        "message": "state input must be index 0"
+      },
+      {
+        "ip": 303,
+        "line": 177,
+        "message": "operator signature required"
+      },
+      {
+        "ip": 305,
+        "line": 178,
+        "message": "audit window has not elapsed"
+      },
+      {
+        "ip": 312,
+        "line": 179,
+        "message": "input 0 must be the minting state NFT"
+      },
+      {
+        "ip": 323,
+        "line": 181,
+        "message": "no rotation in flight"
+      },
+      {
+        "ip": 326,
+        "line": 182,
+        "message": "activateRoot has exactly 2 outputs"
+      },
+      {
+        "ip": 331,
+        "line": 183,
+        "message": "state NFT must stay at this address"
+      },
+      {
+        "ip": 336,
+        "line": 184,
+        "message": "state NFT must be preserved"
+      },
+      {
+        "ip": 343,
+        "line": 185,
+        "message": "active root not updated"
+      },
+      {
+        "ip": 348,
+        "line": 186,
+        "message": "state output needs dust"
+      },
+      {
+        "ip": 353,
+        "line": 187,
+        "message": "change output must not carry tokens"
+      },
+      {
+        "ip": 363,
+        "line": 193,
+        "message": "state input must be index 0"
+      },
+      {
+        "ip": 368,
+        "line": 194,
+        "message": "operator signature required"
+      },
+      {
+        "ip": 374,
+        "line": 195,
+        "message": "input 0 must be the minting state NFT"
+      },
+      {
+        "ip": 383,
+        "line": 197,
+        "message": "no rotation in flight"
+      },
+      {
+        "ip": 386,
+        "line": 198,
+        "message": "cancelRoot has exactly 2 outputs"
+      },
+      {
+        "ip": 391,
+        "line": 199,
+        "message": "state NFT must stay at this address"
+      },
+      {
+        "ip": 396,
+        "line": 200,
+        "message": "state NFT must be preserved"
+      },
+      {
+        "ip": 403,
+        "line": 201,
+        "message": "pending root not cleared"
+      },
+      {
+        "ip": 408,
+        "line": 202,
+        "message": "state output needs dust"
+      },
+      {
+        "ip": 413,
+        "line": 203,
+        "message": "change output must not carry tokens"
+      },
+      {
+        "ip": 423,
+        "line": 209,
+        "message": "reward input must be index 0"
+      },
+      {
+        "ip": 427,
+        "line": 210,
+        "message": "input 0 must hold reward tokens"
+      },
+      {
+        "ip": 430,
+        "line": 211,
+        "message": "deposit has exactly 2 outputs"
+      },
+      {
+        "ip": 435,
+        "line": 212,
+        "message": "reward balance must stay at this address"
+      },
+      {
+        "ip": 438,
+        "line": 213,
+        "message": "reward output must carry reward tokens only"
+      },
+      {
+        "ip": 444,
+        "line": 214,
+        "message": "deposit must increase the pool"
+      },
+      {
+        "ip": 449,
+        "line": 215,
+        "message": "reward output needs dust"
+      },
+      {
+        "ip": 454,
+        "line": 216,
+        "message": "change output must not carry tokens"
+      }
+    ],
+    "sourceTags": "14:18:pv;19:21:pv;228:232:pv;283:285:sc;349:350:sc;409:411:sc;450:452:sc",
+    "functions": [
+      {
+        "id": 0,
+        "name": "ZERO_HASH",
+        "kind": "constant",
+        "inputs": [],
+        "bytecode": "140000000000000000000000000000000000000000",
+        "sourceMap": "36:29:36:71",
+        "logs": [],
+        "requires": []
+      },
+      {
+        "id": 1,
+        "name": "leafHash",
+        "inputs": [
+          {
+            "name": "addrHash",
+            "type": "bytes20"
+          },
+          {
+            "name": "earned",
+            "type": "int"
+          },
+          {
+            "name": "claimed",
+            "type": "int"
+          }
+        ],
+        "bytecode": "0100537a7e7b58807e7c58807ea9",
+        "sourceMap": "43:19:43:23;:26::34;;:19:::1;:51::57:0;:59::60;:37::61:1;:19;:78::85:0;:87::88;:64::89:1;:19;:11::90",
+        "logs": [],
+        "requires": []
+      },
+      {
+        "id": 2,
+        "name": "walk",
+        "inputs": [
+          {
+            "name": "leaf",
+            "type": "bytes20"
+          },
+          {
+            "name": "proof",
+            "type": "bytes"
+          },
+          {
+            "name": "path",
+            "type": "int"
+          }
+        ],
+        "bytecode": "7b7b51006576599f766b63527901147f7857795579965297519c63765779517b7e7c7ea9577a757c6b7c6b7c6b7c727b6c6c6c67567978517b7e7c7ea9577a757c6b7c6b7c6b7c727b6c6c6c6878567a757c6b7c6b7c727b6c6c54795295557a757c6b7c727b6c537a8b7c727b6d75686c9166757b777777",
+        "sourceMap": "49:19:49:23;50:17:50:22;51:18:51:19;52:17:52:18;:4:62:5;:20:52:21;:24::29:1;:20;;;:36:62:5:0;53:33:53:37;;:44::46;:33::47:1;54:41:54:45:0;55:13:55:17;;:20::27;;:13:::1;:31::32:0;:12:::1;:36::37:0;:12:::1;:39:57:9:0;56:28:56:35;:37::41;;:19::42:1;;;;;;:12::43;;;;;;;;;;;;;;;57:15:59:9:0;58:28:58:32;;:34::41;:19::42:1;;;;;;:12::43;;;;;;;;;;;;;;;57:15:59:9;60::60:19:0;:8::20:1;;;;;;;;;;;;61:18:61:25:0;;:28::29;:18:::1;:8::30;;;;;;;;;52:31:52:34;;;;;;:36:62:5;;;;:4;;;63:11:63:15:0;48:69:64:1:1;;",
+        "sourceTags": "102:107:fu;108:109:sc;110:113:lc;114:114:sc;116:118:sc",
+        "logs": [],
+        "requires": [],
+        "inlineRanges": "6:6:DEPTH;29:34:nodeHash;54:59:nodeHash"
+      },
+      {
+        "name": "DEPTH",
+        "kind": "constant",
+        "inputs": [],
+        "bytecode": "59",
+        "sourceMap": "35:21:35:22",
+        "logs": [],
+        "requires": []
+      },
+      {
+        "name": "nodeHash",
+        "inputs": [
+          {
+            "name": "left",
+            "type": "bytes20"
+          },
+          {
+            "name": "right",
+            "type": "bytes20"
+          }
+        ],
+        "bytecode": "517b7e7c7ea9",
+        "sourceMap": "39:19:39:23;:26::30;:19:::1;:33::38:0;:19:::1;:11::39",
+        "logs": [],
+        "requires": []
+      },
+      {
+        "name": "claimChecks",
+        "inputs": [
+          {
+            "name": "rewardCategory",
+            "type": "bytes32"
+          },
+          {
+            "name": "receiptCategory",
+            "type": "bytes32"
+          },
+          {
+            "name": "addrHash",
+            "type": "bytes20"
+          },
+          {
+            "name": "earned",
+            "type": "int"
+          },
+          {
+            "name": "claimed",
+            "type": "int"
+          },
+          {
+            "name": "proof",
+            "type": "bytes"
+          },
+          {
+            "name": "path",
+            "type": "int"
+          }
+        ],
+        "bytecode": "51ce5679527e8851cf01147f008a8800ce58798854795479947600a06900d078a26956795679567a518a54795479528a7b88547954795579518a72528a00d156798800d352799d00cda954798800cc02e803a26951cd00c78851d1567a8851d300d0537a949d51cc02e803a26952cd51c78852d151ce8852d27c008a7e8852cc02e803a26953d1537a8853d3009d53d27b7b58807e8853cc02e803a269c4559d54d10088",
+        "sourceMap": "74:22:74:23;:12::38:1;:42::57:0;;:60::64;:42:::1;:4::107;75:54:75:55:0;:44::70:1;:77::79:0;:44::80:1;76::76:53;;:4::95;78:22:78:23:0;:12::38:1;:42::56:0;;:4::93:1;80:17:80:23:0;;:26::33;;:17:::1;81:12:81:18:0;:21::22;:12:::1;:4::49;82:22:82:23:0;:12::36:1;:40::46:0;:12:::1;:4::72;85:26:85:34:0;;:36::42;;:44::51;;:17::52:1;;:54::59:0;;:61::65;;:12::66:1;;:70::80:0;:4::118:1;86:36:86:44:0;;:46::52;;:54::60;;:27::61:1;;:63::74:0;:22::75:1;;89:23:89:24:0;:12::39:1;:43::57:0;;:4::106:1;90:23:90:24:0;:12::37:1;:41::47:0;;:4::75:1;91:31:91:32:0;:20::49:1;:12::50;:54::62:0;;:4::102:1;92:23:92:24:0;:12::31:1;:35::39:0;:12:::1;:4::79;95:23:95:24:0;:12::41:1;:55::56:0;:45::73:1;:4::119;96:23:96:24:0;:12::39:1;:43::57:0;;:4::106:1;97:23:97:24:0;:12::37:1;:51::52:0;:41::65:1;:68::74:0;;:41:::1;:4::114;98:23:98:24:0;:12::31:1;:35::39:0;:12:::1;:4::69;101:23:101:24:0;:12::41:1;:55::56:0;:45::73:1;:4::114;102:23:102:24:0;:12::39:1;:53::54:0;:43::69:1;:4::102;103:23:103:24:0;:12::39:1;:43::50:0;:53::62:1;;:43;:4::89;104:23:104:24:0;:12::31:1;:35::39:0;:12:::1;:4::68;107:23:107:24:0;:12::39:1;:43::58:0;;:4::115:1;108:23:108:24:0;:12::37:1;:41::42:0;:4::86:1;109:23:109:24:0;:12::39:1;:43::51:0;:68::74;:76::77;:54::78:1;:43;:4::111;110:23:110:24:0;:12::31:1;:35::39:0;:12:::1;:4::80;113:12:113:29:0;:33::34;:4::73:1;114:23:114:24:0;:12::39:1;:43::45:0;:4::86:1",
+        "logs": [],
+        "requires": [
+          {
+            "ip": 6,
+            "line": 74,
+            "message": "input 1 must be the minting state NFT"
+          },
+          {
+            "ip": 13,
+            "line": 76,
+            "message": "root rotation pending: claims paused"
+          },
+          {
+            "ip": 18,
+            "line": 78,
+            "message": "input 0 must hold reward tokens"
+          },
+          {
+            "ip": 27,
+            "line": 81,
+            "message": "nothing left to claim"
+          },
+          {
+            "ip": 32,
+            "line": 82,
+            "message": "pool balance too low"
+          },
+          {
+            "ip": 48,
+            "line": 85,
+            "message": "proof does not match active root"
+          },
+          {
+            "ip": 64,
+            "line": 89,
+            "message": "payout output must carry reward tokens only"
+          },
+          {
+            "ip": 69,
+            "line": 90,
+            "message": "payout amount mismatch"
+          },
+          {
+            "ip": 75,
+            "line": 91,
+            "message": "payout must go to the leaf address"
+          },
+          {
+            "ip": 80,
+            "line": 92,
+            "message": "claimant must fund the payout dust"
+          },
+          {
+            "ip": 85,
+            "line": 95,
+            "message": "reward balance must stay at this address"
+          },
+          {
+            "ip": 90,
+            "line": 96,
+            "message": "reward output must carry reward tokens only"
+          },
+          {
+            "ip": 98,
+            "line": 97,
+            "message": "reward balance must drop by payout"
+          },
+          {
+            "ip": 103,
+            "line": 98,
+            "message": "reward output needs dust"
+          },
+          {
+            "ip": 108,
+            "line": 101,
+            "message": "state NFT must stay at this address"
+          },
+          {
+            "ip": 113,
+            "line": 102,
+            "message": "state NFT must be preserved"
+          },
+          {
+            "ip": 120,
+            "line": 103,
+            "message": "pool root not updated"
+          },
+          {
+            "ip": 125,
+            "line": 104,
+            "message": "state output needs dust"
+          },
+          {
+            "ip": 130,
+            "line": 107,
+            "message": "receipt must be an immutable NFT of receiptCategory"
+          },
+          {
+            "ip": 134,
+            "line": 108,
+            "message": "receipt must not carry fungible tokens"
+          },
+          {
+            "ip": 142,
+            "line": 109,
+            "message": "receipt commitment mismatch"
+          },
+          {
+            "ip": 147,
+            "line": 110,
+            "message": "claimant must fund the receipt dust"
+          },
+          {
+            "ip": 150,
+            "line": 113,
+            "message": "claim must have exactly 5 outputs"
+          },
+          {
+            "ip": 154,
+            "line": 114,
+            "message": "change output must not carry tokens"
+          }
+        ]
+      }
+    ],
+    "inlineRanges": "36:190:claimChecks"
+  },
+  "compiler": {
+    "name": "cashc",
+    "version": "0.14.0",
+    "options": {
+      "enforceFunctionParameterTypes": true,
+      "enforceLocktimeGuard": true
+    }
+  },
+  "updatedAt": "2026-11-18T20:03:16.835Z"
+}
