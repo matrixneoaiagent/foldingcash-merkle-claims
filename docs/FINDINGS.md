@@ -55,6 +55,13 @@ operator's existing power to decide `cumulativeEarned` anyway. A v2 could requir
 the operator to publish a hash of the claim log alongside each root, making a
 mismatch impossible to hide rather than merely detectable.
 
+The same trust covers root *rollback*: the operator may propose an older root in
+which a leaf looks unclaimed, which would let that user claim twice. The covenant
+cannot tell a "new" root from an old one (roots are opaque 20-byte values), so
+this is a watcher job: the published leaf snapshot is what makes rollback
+recognisable, and `scripts/sync.ts` refuses to confirm a root that does not
+follow from the claim history.
+
 ## 4. Why the receipt is not the only guard (and why it is still worth having)
 
 The obvious design — per-user receipt NFT carrying the claimed total, first claim

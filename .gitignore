@@ -1,6 +1,5 @@
 node_modules/
 dist/
-demo/transactions.jsonl
 demo/last-sync.json
 *.log
 .env

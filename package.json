@@ -42,7 +42,9 @@
     "next-epoch": "tsx scripts/next-epoch.ts",
     "serve": "tsx scripts/serve.ts",
     "cost": "tsx scripts/cost-model.ts",
-    "depth": "tsx scripts/depth-analysis.ts"
+    "depth": "tsx scripts/depth-analysis.ts",
+    "reject:wrong-receipt": "tsx scripts/reject-wrong-receipt.ts",
+    "verify": "tsx scripts/verify.ts"
   },
   "dependencies": {
     "@bitauth/libauth": "^3.1.0-next.8",

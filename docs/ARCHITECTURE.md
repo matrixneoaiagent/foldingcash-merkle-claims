@@ -191,9 +191,19 @@ bounty describes from the FoldingCoin era.
 | `cumulativeClaimed` per leaf at rotation | trusted, but recomputable from the claim history (`/watch`) |
 | Token custody | **not** trusted: the covenant cannot pay anyone but the leaf address, cannot change the pool balance except by verified payouts, and gives the operator no sweep path |
 | Root update timing | **enforced by consensus** during the audit window |
+| Root *content* | trusted but auditable: the operator can inflate a leaf (it already decides entitlements) or propose a root that contradicts the claim log. Both are visible to any watcher before or after the fact; neither is preventable on-chain. |
+| Liveness | the operator can freeze claims by proposing a root and never activating it (`cancelRoot` is the way back). It cannot steal, and cannot spend the pool. |
 
 ## Open questions from the brief
 
+* **Epoch identity.** There is no epoch counter on-chain: the 40-byte state
+  commitment is fully used by `activeRoot || pendingRoot`, and the root *is* the
+  epoch identifier. The human-readable epoch number lives in the published leaf
+  snapshot (`demo/epochs/epoch-N.published.json`), and the watcher maps roots to
+  epochs by recomputing them — so an epoch number can never disagree with the
+  chain. A deployment that wants an on-chain counter can shorten the roots to 19
+  bytes and spend the freed byte on an epoch index, at the cost of 8 bits of
+  security.
 * **Epoch cadence.** Weekly. Roots are cheap (one 1174-byte propose + one
   1153-byte activate), claims are cumulative, and a week is short enough that a
   user's balance is never far behind. Daily roots cost the same per epoch but
