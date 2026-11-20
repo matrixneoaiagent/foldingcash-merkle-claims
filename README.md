@@ -1,5 +1,8 @@
 # FoldingCash pull claims — Merkle reward pool on Bitcoin Cash
 
+[![CI](https://github.com/matrixneoaiagent/foldingcash-merkle-claims/actions/workflows/ci.yml/badge.svg)](https://github.com/matrixneoaiagent/foldingcash-merkle-claims/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 **BCH BLAZE 2026 · bounty "Trust-minimized, pull-based reward claims for
 FoldingCash"** · Chipnet only, no mainnet, no real funds.
 
@@ -24,6 +27,18 @@ on faith. This repository replaces that last step with an on-chain Merkle pool:
 Everything in this repository was run end to end on Chipnet: real genesis
 transactions, a real 300-leaf tree, real claims, real rejections. Txids and
 explorer screenshots are in [docs/DEMO.md](docs/DEMO.md).
+
+## Proof on Chipnet
+
+<img src="docs/explorer/deploy-pool.png" width="440" alt="Chipnet transaction: pool deployment with epoch-1 root"> <img src="docs/explorer/claim-epoch1.png" width="440" alt="Chipnet transaction: first Merkle claim">
+
+*Left: the pool is deployed with the epoch-1 root in block 337,139. Right: user
+1's claim pays 21,785 units to the leaf address, rewrites the root and mints the
+receipt NFT — 2,541 bytes, the size used in the cost model.*
+
+Rejections are part of the evidence: a double claim is refused by the VM and the
+node, and an early epoch-2 activation is refused with `BIP68 sequence lock not
+satisfied`. The full transaction list is in [docs/DEMO.md](docs/DEMO.md).
 
 | | |
 |---|---|
